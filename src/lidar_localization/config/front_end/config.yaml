@@ -1,7 +1,7 @@
 data_path: ./   # 数据存放路径
 
 # 匹配
-registration_method: ICP   # 选择点云匹配方法，目前支持：NDT 
+registration_method: NDT   # 选择点云匹配方法，目前支持：NDT 
 
 # 局部地图
 key_frame_distance: 2.0 # 关键帧距离
@@ -26,6 +26,8 @@ ICP:
     trans_eps : 0.01
     eculi_eps : 0.01
     max_iter : 10
+ICP2P:
+    MaximumIterations: 30
 ## 滤波相关参数
 voxel_filter:
     local_map:

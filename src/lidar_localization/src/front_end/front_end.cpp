@@ -85,6 +85,10 @@ bool FrontEnd::InitRegistration(std::shared_ptr<RegistrationInterface>& registra
     {
         registration_ptr = std::make_shared<ICPRegistration>(config_node[registration_method]);
     } 
+    else if (registration_method == "ICP2P") {
+        registration_ptr = std::make_shared<ICP2PRegistration>(config_node[registration_method]);
+        return true;  
+    } 
     else {
         LOG(ERROR) << "没找到与 " << registration_method << " 相对应的点云匹配方式!";
         return false;
