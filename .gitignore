@@ -2,7 +2,9 @@ lidar_localization/slam_data
 
 build
 devel
+slam_data
 .catkin_workspace
+.vscode
 
 *.INFO
 *.INFO.*

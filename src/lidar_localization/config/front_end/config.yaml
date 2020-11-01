@@ -21,6 +21,11 @@ NDT:
     step_size : 0.1
     trans_eps : 0.01
     max_iter : 30
+ICP:
+    max_dist : 2
+    trans_eps : 0.01
+    eculi_eps : 0.01
+    max_iter : 10
 ## 滤波相关参数
 voxel_filter:
     local_map:

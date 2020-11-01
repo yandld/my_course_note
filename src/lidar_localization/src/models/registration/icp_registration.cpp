@@ -4,53 +4,46 @@
  * @Date: 2020-02-08 21:46:45
  */
 #include "lidar_localization/models/registration/icp_registration.hpp"
-
 #include "glog/logging.h"
 
 namespace lidar_localization {
 
 ICPRegistration::ICPRegistration(const YAML::Node& node)
-    :ndt_ptr_(new pcl::IterativeClosestPoint<CloudData::POINT, CloudData::POINT>()) {
+    :icp_ptr_(new pcl::IterativeClosestPoint<CloudData::POINT, CloudData::POINT>()) {
     
-    // float res = node["res"].as<float>();
-    // float step_size = node["step_size"].as<float>();
-    // float trans_eps = node["trans_eps"].as<float>();
-    // int max_iter = node["max_iter"].as<int>();
-    float res = 1;
-    float step_size = 1;
-    float trans_eps = 1e-6;
-    int max_iter = 50;
+     float max_dist = node["max_dist"].as<float>();
+     float trans_eps = node["trans_eps"].as<float>();
+     float eculi_eps = node["eculi_eps"].as<float>();
+     int max_iter = node["max_iter"].as<int>();
 
-    SetRegistrationParam(res, step_size, trans_eps, max_iter);
+    SetRegistrationParam(max_dist, trans_eps, eculi_eps, max_iter);
 }
 
-ICPRegistration::ICPRegistration(float res, float step_size, float trans_eps, int max_iter)
-    :ndt_ptr_(new pcl::IterativeClosestPoint<CloudData::POINT, CloudData::POINT>()) {
+ICPRegistration::ICPRegistration(float max_dist, float trans_eps, float eculi_eps, int max_iter)
+    :icp_ptr_(new pcl::IterativeClosestPoint<CloudData::POINT, CloudData::POINT>()) {
 
-    SetRegistrationParam(res, step_size, trans_eps, max_iter);
+    SetRegistrationParam(max_dist, trans_eps, eculi_eps, max_iter);
 }
 
-bool ICPRegistration::SetRegistrationParam(float res, float step_size, float trans_eps, int max_iter) {
-  //  ndt_ptr_->setResolution(res);
-  //  ndt_ptr_->setStepSize(step_size);
+bool ICPRegistration::SetRegistrationParam(float max_dist, float trans_eps, float eculi_eps, int max_iter) {
 
-    ndt_ptr_->setMaxCorrespondenceDistance(1);
-    ndt_ptr_->setEuclideanFitnessEpsilon(1);
-    ndt_ptr_->setTransformationEpsilon(1e-4);
-    ndt_ptr_->setMaximumIterations(30);
+    icp_ptr_->setMaxCorrespondenceDistance(max_dist);
+    icp_ptr_->setEuclideanFitnessEpsilon(trans_eps);
+    icp_ptr_->setTransformationEpsilon(eculi_eps);
+    icp_ptr_->setMaximumIterations(max_iter);
 
     LOG(INFO) << "NDT 的匹配参数为：" << std::endl
-              << "res: " << res << ", "
-              << "step_size: " << step_size << ", "
+              << "max_dist: " << max_dist << ", "
               << "trans_eps: " << trans_eps << ", "
-              << "max_iter: " << max_iter 
+              << "eculi_eps: " << eculi_eps << ", "
+              << "max_iter: " << max_iter << ", "
               << std::endl << std::endl;
 
     return true;
 }
 
 bool ICPRegistration::SetInputTarget(const CloudData::CLOUD_PTR& input_target) {
-    ndt_ptr_->setInputTarget(input_target);
+    icp_ptr_->setInputTarget(input_target);
 
     return true;
 }
@@ -61,9 +54,9 @@ bool ICPRegistration::ScanMatch(const CloudData::CLOUD_PTR& input_source,
                                 Eigen::Matrix4f& result_pose) {
                                
                                     
-    ndt_ptr_->setInputSource(input_source);
-    ndt_ptr_->align(*result_cloud_ptr, predict_pose);
-    result_pose = ndt_ptr_->getFinalTransformation();
+    icp_ptr_->setInputSource(input_source);
+    icp_ptr_->align(*result_cloud_ptr, predict_pose);
+    result_pose = icp_ptr_->getFinalTransformation();
 
     return true;
 }
