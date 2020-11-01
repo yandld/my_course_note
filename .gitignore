@@ -1,5 +1,9 @@
 lidar_localization/slam_data
 
+build
+devel
+.catkin_workspace
+
 *.INFO
 *.INFO.*
 *.log.*
