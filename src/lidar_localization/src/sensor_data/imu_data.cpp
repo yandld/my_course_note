@@ -31,7 +31,9 @@ bool IMUData::SyncData(std::deque<IMUData>& UnsyncedData, std::deque<IMUData>& S
             UnsyncedData.pop_front();
             return false;
         }
+        
         if (UnsyncedData.at(1).time - sync_time > 0.2) {
+            UnsyncedData.pop_front();
             return false;
         }
         break;
