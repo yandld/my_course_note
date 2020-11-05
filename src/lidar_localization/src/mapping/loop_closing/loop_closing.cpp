@@ -16,6 +16,8 @@
 #include "lidar_localization/models/cloud_filter/voxel_filter.hpp"
 #include "lidar_localization/models/cloud_filter/no_filter.hpp"
 #include "lidar_localization/tools/print_info.hpp"
+#include "lidar_localization/mapping/loop_closing/Scancontext.h"
+
 
 namespace lidar_localization {
 LoopClosing::LoopClosing() {
@@ -85,6 +87,46 @@ bool LoopClosing::InitFilter(std::string filter_user, std::shared_ptr<CloudFilte
     }
 
     return true;
+}
+
+bool LoopClosing:: DetectLoopByScanContext(int& key_frame_index)
+{
+    SCManager sc_manager_;
+
+ //   CloudData::CLOUD_PTR scan_cloud_ptr(new CloudData::CLOUD());
+ //   std::string file_path = key_frames_path_ + "/key_frame_" + std::to_string(all_key_frames_.back().index) + ".pcd";
+  //  pcl::io::loadPCDFile(file_path, *scan_cloud_ptr);
+
+
+    CloudData::CLOUD_PTR current_scan_ptr (new CloudData::CLOUD());
+    std::string file_path = key_frames_path_ + "/key_frame_" + std::to_string(all_key_frames_.back().index) + ".pcd";
+    pcl::io::loadPCDFile(file_path, *current_scan_ptr);
+
+
+    scan_filter_ptr_->Filter(current_scan_ptr, current_scan_ptr);
+    pcl::PointCloud<SCPointType>::Ptr current_scan_ptr_copy(new pcl::PointCloud<SCPointType>());
+    pcl::copyPointCloud(*current_scan_ptr,  *current_scan_ptr_copy);
+    sc_manager_.makeAndSaveScancontextAndKeys(*current_scan_ptr_copy);
+
+    static int skip_cnt = 0;
+    static int skip_num = loop_step_;
+
+    if(++skip_cnt < skip_num)
+    {   
+        return false;
+    }
+
+    auto result = sc_manager_.detectLoopClosureID();
+
+    if(result.first == -1)
+        return false;
+    else
+    {
+        key_frame_index = result.first;
+        return true;
+    }
+    
+
 }
 
 bool LoopClosing::Update(const KeyFrame key_frame, const KeyFrame key_gnss) {
@@ -157,7 +199,7 @@ bool LoopClosing::CloudRegistration(int key_frame_index) {
     // 生成当前scan
     CloudData::CLOUD_PTR scan_cloud_ptr(new CloudData::CLOUD());
     Eigen::Matrix4f scan_pose = Eigen::Matrix4f::Identity();
-    JointScan(scan_cloud_ptr, scan_pose);
+    JointScan(key_frame_index, scan_cloud_ptr, scan_pose);
 
     // 匹配
     Eigen::Matrix4f result_pose = Eigen::Matrix4f::Identity();
@@ -198,8 +240,11 @@ bool LoopClosing::JointMap(int key_frame_index, CloudData::CLOUD_PTR& map_cloud_
         CloudData::CLOUD_PTR cloud_ptr(new CloudData::CLOUD());
         pcl::io::loadPCDFile(file_path, *cloud_ptr);
         
-        Eigen::Matrix4f cloud_pose = pose_to_gnss * all_key_frames_.at(i).pose;
-        pcl::transformPointCloud(*cloud_ptr, *cloud_ptr, cloud_pose);
+        map_pose = all_key_frames_.at(i).pose;
+        pcl::transformPointCloud(*cloud_ptr, *cloud_ptr, map_pose);
+
+        // Eigen::Matrix4f cloud_pose = pose_to_gnss * all_key_frames_.at(i).pose;
+        // pcl::transformPointCloud(*cloud_ptr, *cloud_ptr, cloud_pose);
 
         *map_cloud_ptr += *cloud_ptr;
     }
@@ -207,8 +252,11 @@ bool LoopClosing::JointMap(int key_frame_index, CloudData::CLOUD_PTR& map_cloud_
     return true;
 }
 
-bool LoopClosing::JointScan(CloudData::CLOUD_PTR& scan_cloud_ptr, Eigen::Matrix4f& scan_pose) {
-    scan_pose = all_key_gnss_.back().pose;
+bool LoopClosing::JointScan(int key_frame_index, CloudData::CLOUD_PTR& scan_cloud_ptr, Eigen::Matrix4f& scan_pose) {
+
+    scan_pose = all_key_frames_.at(key_frame_index).pose;
+
+   // scan_pose = all_key_gnss_.back().pose;
     current_loop_pose_.index1 = all_key_frames_.back().index;
     current_loop_pose_.time = all_key_frames_.back().time;
 

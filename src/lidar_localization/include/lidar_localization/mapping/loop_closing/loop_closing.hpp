@@ -35,8 +35,9 @@ class LoopClosing {
     
     bool DetectNearestKeyFrame(int& key_frame_index);
     bool CloudRegistration(int key_frame_index);
+    bool DetectLoopByScanContext(int& key_frame_index);
     bool JointMap(int key_frame_index, CloudData::CLOUD_PTR& map_cloud_ptr, Eigen::Matrix4f& map_pose);
-    bool JointScan(CloudData::CLOUD_PTR& scan_cloud_ptr, Eigen::Matrix4f& scan_pose);
+    bool JointScan(int key_frame_index, CloudData::CLOUD_PTR& scan_cloud_ptr, Eigen::Matrix4f& scan_pose);
     bool Registration(CloudData::CLOUD_PTR& map_cloud_ptr, 
                       CloudData::CLOUD_PTR& scan_cloud_ptr, 
                       Eigen::Matrix4f& scan_pose, 

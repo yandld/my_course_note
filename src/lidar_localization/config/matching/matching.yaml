@@ -1,4 +1,4 @@
-map_path: /home/rq/matching_map/filtered_map.pcd   # 地图存放路径
+map_path: /home/yandld/catkin_ws/shenlan_multi_sensor_fusion/src/lidar_localization/slam_data/map/filtered_map.pcd   # 地图存放路径
 
 # 匹配
 registration_method: NDT   # 选择点云匹配方法，目前支持：NDT 
