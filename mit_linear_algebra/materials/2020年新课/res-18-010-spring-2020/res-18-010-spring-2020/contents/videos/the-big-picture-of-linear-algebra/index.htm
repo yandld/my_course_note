@@ -1,0 +1,850 @@
+<!DOCTYPE html><html lang="en">
+      
+      
+        
+    
+    
+    
+    
+
+      
+      
+      <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">  
+        
+        <title>Part 2: The Big Picture of Linear Algebra | Videos | A 2020 Vision of Linear Algebra | MIT OpenCourseWare</title>
+    <!-- Begin Automatic Metadata Insertion -->
+    <meta content="res-18-010-a-2020-vision-of-linear-algebra-spring-2020" name="WT.cg_n">
+    <meta content="Part 2: The Big Picture of Linear Algebra" name="WT.cg_s">
+    <meta content="" name="Description">
+    <meta content="Strang, Gilbert" name="Author">
+    <meta content="RES.18-010,RES.18,linear algebra,matrix,matrices,column space,orthogonal vectors,eigenvalues,eigenvectors,singular values,singular vectors, factorization,A = CR,SVD" name="keywords">
+    <meta content="RES.18-010 A 2020 Vision of Linear Algebra | Part 2: The Big Picture of Linear Algebra" name="Search_Display">
+    <!-- End Automatic Metadata Insertion -->
+
+	<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/grid.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/base.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/menu.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/jquery.bubblepopup.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/search.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/courses.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/courses_new.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/jquery.jscrollpane.css">
+<link title="default" rel="stylesheet" type="text/css" href="../../../common/styles/media_tabs.css">
+	<link href="../../../common/xml/ocwcc.rdf" type="application/rdf+xml" rel="metadata">
+	<link rel="canonical" href="https://ocw.mit.edu/resources/res-18-010-a-2020-vision-of-linear-algebra-spring-2020/videos/the-big-picture-of-linear-algebra/">
+	<link rel="apple-touch-icon" href="../../../common/images/apple-touch-icon.png">
+	
+	
+      
+	
+	<script type="text/javascript" src="../../../common/scripts/jquery.js"></script>
+	<script type="text/javascript" src="../../../common/scripts/ocw-media-utils-offline.js"></script>
+	<script type="text/javascript" src="../../../common/scripts/ocw-offline.js"></script>
+	<script type="text/javascript" src="../../../common/scripts/jquery.bubblepopup.min.js"></script>
+	<script type="text/javascript" src="../../../common/scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../../common/scripts/jquery.jscrollpane.min.js"></script>
+	<script type="text/javascript" src="../../../common/scripts/expandy.js"></script>
+	<script type="text/javascript" src="../../../common/scripts/bubble-popup-offline.js"></script>
+	
+	
+	
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#tabs").tabs();
+        IpadScroller();
+      });
+    </script>
+    
+    
+    
+    
+    
+    
+      
+       
+		 
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </head>
+    <body itemscope itemtype="http://schema.org/WebPage">
+        
+	
+
+        <header id="top">
+			<div id="grid">
+				
+				
+					
+<div id="portletwrapper-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d686561646572" class="portletWrapper kssattr-portlethash-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d686561646572">
+<div class="portletStaticText portlet-static-site-header">
+<!--googleoff: index-->
+<div class="grid_6 alpha" id="banner"><a href="https://ocw.mit.edu/"><img src="../../../common/images/ocw_mast.png" class="logo" alt="MIT OpenCourseWare, Massachusetts Institute of Technology"></a></div>
+<div class="grid_6 omega" id="subscribe">
+<aside class="module" aria-label="Connect with OCW">
+<table class="social">
+    <tbody>
+        <tr>
+            <td class="socialbutton"><a aria-label="Subscribe to the OCW Newsletter" href="https://ocw.mit.edu/subscribe/index.htm?utm_source=header"><img src="../../../common/images/trans.gif" alt="An icon depicting an envelope.">Subscribe to the OCW Newsletter</a></td>
+            <td>
+<a aria-label="Facebook" href="https://facebook.com/mitocw"><img src="../../../common/images/icon_fb.png" alt="Click to visit our Facebook page."></a>  <a aria-label="Instagram" href="https://www.instagram.com/mitocw/"><img src="https://ocw.mit.edu/images/icon_ig.png" alt="Click to visit our Instagram page."></a> <a aria-label="Twitter" href="https://twitter.com/mitocw"><img src="https://ocw.mit.edu/images/icon_twitter.png" alt="Click to visit our Twitter feed."></a><a aria-label="YouTube" href="https://www.youtube.com/mitocw" style="font-size: 12.208px;"><img src="https://ocw.mit.edu/images/icon_yt.png" alt="Click to visit our YouTube page."></a><span style="font-size: 12.208px;">   </span><a aria-label="Open Matters blog on WordPress" href="https://mitopencourseware.wordpress.com/" style="font-size: 12.208px;"><img src="https://ocw.mit.edu/images/icon_wp.png" alt="Click to visit our blog on WordPress."></a>
+</td>
+        </tr>
+    </tbody>
+</table>
+</aside><nav aria-label="Help Links" class="helplinks">     <a aria-label="OCW Site Help" href="https://ocw.mit.edu/help">Help</a><span aria-hidden="true">|</span>     <a href="../../../common/about/contactus.htm">Contact Us</a>   </nav>
+</div>
+<div class="clear"> </div>
+<!--googleon: index-->
+</div>
+
+</div>
+
+<div id="portletwrapper-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a6d6567612d6d656e75" class="portletWrapper kssattr-portlethash-6f63772e746f70706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a6d6567612d6d656e75">
+<div class="portletStaticText portlet-static-mega-menu"><div><nav id="mega" class="grid_8 alpha" aria-label="Site">
+<ul id="menu" role="presentation">
+    <li id="menu_home">
+<a href="https://ocw.mit.edu/" aria-label="Homepage"><img src="../../../common/images/top-nav_home.png" class="home_icon" alt="Click for site home page."></a><!-- Begin Home Item -->
+</li>
+    <!-- End Home Item -->
+    <li id="drop_1" aria-label="Find Courses">
+<a href="#" aria-hidden="true">FIND COURSES</a><!-- Begin 5 columns Item -->
+    <div class="dropdown_5columns-a mega-courses">
+    <div class="col_1a">
+    <div class="row_1a">
+<nav aria-labelledby="mm-find-courses-by">     <span id="mm-find-courses-by" class="nav" aria-hidden="true">Find courses by:</span>
+    <ul class="find_by" role="presentation">
+        <li><a href="https://ocw.mit.edu/courses/find-by-topic/">Topic</a></li>
+        <li><a href="https://ocw.mit.edu/courses/find-by-number/">MIT Course Number</a></li>
+        <li><a href="https://ocw.mit.edu/courses/find-by-department/">Department</a></li>
+    </ul>
+    </nav>     <nav aria-labelledby="mm-collections">     <span id="mm-collections" class="nav" aria-hidden="true">Collections</span>
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/courses/new-courses/">New Courses</a></li>
+        <li><a href="https://ocw.mit.edu/courses/most-visited-courses/">Most Visited Courses</a></li>
+        <li><a href="https://ocw.mit.edu/courses/ocw-scholar/">OCW Scholar Courses</a></li>
+        <li><a href="https://ocw.mit.edu/courses/audio-video-courses/">Audio/Video Lectures</a></li>
+        <li><a href="https://ocw.mit.edu/courses/online-textbooks/">Online Textbooks</a></li>
+        <li><a href="https://ocw.mit.edu/resources/">Supplemental Resources</a></li>
+        <li><a href="https://ocw.mit.edu/high-school/">OCW Highlights for High School</a></li>
+        <li><a href="https://ocw.mit.edu/courses/mitx-related-courseware/">MITx &amp; Related OCW Courses</a></li>
+        <li><a href="https://ocw.mit.edu/courses/mit-open-learning-library/">MIT Open Learning Library</a></li>
+    </ul>
+    </nav>     <nav class="col_1b" aria-labelledby="mm-translated-courses">     <span id="mm-translated-courses" class="nav" aria-hidden="true" style="line-height: 1.3;">Cross-Disciplinary Topic Lists</span>
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/courses/energy-courses">Energy</a></li>
+        <li><a href="https://ocw.mit.edu/courses/entrepreneurship">Entrepreneurship</a></li>
+        <li><a href="https://ocw.mit.edu/courses/environment-courses">Environment</a></li>
+        <li><a href="https://ocw.mit.edu/courses/intro-programming">Introductory Programming</a></li>
+        <li><a href="https://ocw.mit.edu/courses/life-sciences">Life Sciences</a></li>
+        <li><a href="https://ocw.mit.edu/courses/transportation-courses">Transportation</a></li>
+    </ul>
+    </nav>
+</div>
+    <div class="row_1b"><nav aria-labelledby="mm-cross-disciplinary-topic-lists">     <span id="mm-cross-disciplinary-topic-lists" class="nav" aria-hidden="true">Translated Courses</span>
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/courses/translated-courses/traditional-chinese" aria-label="Traditional Chinese">繁體字 / Traditional Chinese</a></li>
+        <li><a href="https://ocw.mit.edu/courses/translated-courses/turkish" aria-label="Turkish">Türkçe / Turkish</a></li>
+        <li><a href="https://ocw.mit.edu/courses/translated-courses/korean" aria-label="Korean">(비디오)한국 / Korean</a></li>
+    </ul>
+    </nav></div>
+    </div>
+    </div>
+    </li>
+    <li id="drop_2">
+<a href="#" aria-label="For Educators">For Educators</a>
+    <div class="dropdown_1column-a" style="width: 270px;"><nav aria-labelledby="mm-find-courses-by">
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/educator/chalk-radio-podcast">Chalk Radio Podcast</a></li>
+        <li><a href="https://ocw.mit.edu/educator/">OCW Educator Portal</a></li>
+    </ul>
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/courses/instructor-insights/">Instructor Insights by Department</a></li>
+        <li><a href="https://openlearning.mit.edu/campus/digital-innovations/">Residential Digital Innovations </a></li>
+    </ul>
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/high-school/">OCW Highlights for High School</a></li>
+    </ul>
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/educator/additional-resources/">Additional Resources</a></li>
+    </ul>
+    </nav></div>
+    </li>
+    <li id="drop_3">
+<a href="#" aria-hidden="true">Give Now</a>
+    <div class="dropdown_1column-a"><nav class="col_1" aria-label="Donate">
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/give/">Make a Donation</a></li>
+        <li><a href="https://ocw.mit.edu/give/why-give/">Why Give?</a></li>
+        <li><a href="https://ocw.mit.edu/give/our-supporters/">Our Supporters</a></li>
+        <li><a href="https://ocw.mit.edu/give/other-ways-to-contribute/">Other Ways to Contribute</a></li>
+        <li><a href="https://ocw.mit.edu/support/">Become a Corporate Sponsor</a></li>
+    </ul>
+    </nav></div>
+    </li>
+    <li id="drop_4">
+<a href="#" aria-hidden="true">About</a>
+    <div class="dropdown_1column-a"><nav class="col_1" aria-label="About">
+    <ul role="presentation">
+        <li><a href="https://ocw.mit.edu/about/">About MIT OpenCourseWare</a></li>
+        <li><a href="https://ocw.mit.edu/about/site-statistics/">Site Statistics</a></li>
+        <li><a href="https://ocw.mit.edu/about/ocw-stories/">OCW Stories</a></li>
+        <li><a href="https://ocw.mit.edu/about/newsletter/">News</a></li>
+        <li><a href="https://ocw.mit.edu/educator/chalk-radio-podcast/">Chalk Radio Podcast</a></li>
+    </ul>
+    </nav></div>
+    </li>
+</ul>
+</nav></div></div>
+
+</div>
+
+
+
+
+
+<!--googleoff: index-->
+<script>
+  (function() {
+	var cx = '012626166551961672889:owjdpuboktq';
+	var gcse = document.createElement('script');
+	gcse.type = 'text/javascript';
+	gcse.async = true;
+	gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(gcse, s);
+  })();
+  window.onload = function(){
+	document.getElementById('gsc-i-id1').placeholder = 'Search';	
+  };
+
+$(document).ready(function(){
+
+$('.advanceSearch a').keydown(function(event){showSearchTips($(this),event);})
+$('#searchTipsModal').keydown(function(event){showSearchTips($(this),event);})
+
+function showSearchTips(obj,evt) {
+// if pressed enter key
+	if ( evt.which == 13 || evt.which == 32) {
+		showModal();
+		ga('send', 'pageview', "AdvanceSearch");
+		$(".advanceSearch a").attr('aria-expanded', 'true');
+		$('.searchTipsModal').focus();
+		evt.preventDefault();
+		}
+	if ( evt.which == 27 ) {
+		hideModal();
+		$(".advanceSearch a").attr('aria-expanded', 'false');
+		var modal = document.getElementById('searchTipsModal');
+		modal.style.display = "none";
+		$(".advanceSearch a").focus();
+		evt.preventDefault();
+		}
+}
+
+});
+function showModal(){
+	var modal = document.getElementById('searchTipsModal');
+	modal.style.display = "block";
+	ga('send', 'pageview', "AdvanceSearch");
+	document.getElementById("searchTipsBtn").setAttribute("aria-expanded", true);
+	window.setTimeout(function () {
+    document.getElementById('searchTipsModal').focus(); }, 0);
+}
+
+function hideModal(){
+	var modal = document.getElementById('searchTipsModal');
+	modal.style.display = "none";
+	document.getElementById("searchTipsBtn").setAttribute("aria-expanded", false);
+}
+</script>
+<div id="search" role="search" class="grid_4 omega">
+    	<table class="search">
+				<tbody>
+					<tr>
+						<td><div class="searchboxheader"><searchbox-only resultsurl="/search/ocwsearch.htm"></searchbox-only></div></td>
+						<td>
+							<div class="advanceSearch">
+								<a id="searchTipsBtn" onclick="showModal();" href="#" role="button" aria-label="search tips" aria-expanded="false" aria-describedby="searchtips">Search Tips</a>
+
+								<!-- The Modal -->
+								<div id="searchTipsModal" class="modal" tabindex="-1">
+								  <!-- Modal content -->
+									<div class="modal-content">
+										<div class="modal-body">
+											<button class="close" onclick="hideModal();" aria-label="close">X</button>
+											<span>
+												<b>Exclude words from your search</b>
+												<br>Put - in front of a word you want to leave out. For example, jaguar speed -car
+												<br><br>
+												<b>Search for an exact match</b>
+												<br>Put a word or phrase inside quotes. For example, "tallest building".
+												<br><br>
+												<b>Search for wildcards or unknown words</b>
+												<br>Put a * in your word or phrase where you want to leave a placeholder. For example, "largest * in the world".
+												<br><br>
+												<b>Search within a range of numbers</b>
+												<br>Put .. between two numbers. For example, camera $50..$100.
+												<br><br>
+												<b>Combine searches</b>
+												<br>Put "OR" between each search query. For example,  marathon OR race.
+												<br><br>
+											</span>
+										</div>
+								  </div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+		</table>
+</div>
+<div class="clear"></div>
+<!--googleon: index-->
+<!-- *end header* -->
+
+				
+				
+			</div>
+<!-- top grid end -->
+		</header><!-- top end -->
+			
+		<div id="center_media">
+      	<div id="grid">
+      		<div id="left">
+        		<nav id="breadcrumb_media" aria-label="Breadcrumb">
+                	<p>
+
+    <a href="https://ocw.mit.edu/">Home</a>
+    
+        »
+        
+    
+    
+        
+            <a href="https://ocw.mit.edu/resources">Supplemental Resources</a>
+            
+                »
+                
+            
+            
+         
+    
+    
+        
+            <a href="../../../contents/index.htm">A 2020 Vision of Linear Algebra</a>
+            
+                »
+                
+            
+            
+         
+    
+    
+        
+            <a href="../../../contents/videos/index.htm">Videos</a>
+            
+                »
+                
+            
+            
+         
+    
+    
+        
+            
+            
+            The Big Picture of Linear Algebra
+         
+    
+</p>
+
+            	</nav>
+            	<div class="clear"></div>
+        		<div id="media_title">
+        		<h1 class="title" itemprop="name" property="dct:title">
+        <span class="" id="parent-fieldname-title">
+            Part 2: The Big Picture of Linear Algebra
+        </span>
+    </h1>
+        		</div>
+           		<div class="clear"></div>
+           		<div id="course_wrapper_media">
+           			<nav id="course_nav" aria-label="Course">
+           				<script language="javascript" type="text/javascript">
+function toggleMenu(objID) {
+  if (!document.getElementById) return;
+  var ob = document.getElementById(objID);
+  ob.className = (ob.className == 'selected')?'': 'selected';
+}
+function toggleClass(id)
+{
+  var divtoggleClass= document.getElementById(id);
+  divtoggleClass.className = (divtoggleClass.className == 'mO')?'mC': 'mO';
+  return false;
+}
+function changeAlt(id)
+{
+  id.alt = (id.alt == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+  id.title = (id.title == 'Expand Menu')?'Collapse Menu' : 'Expand Menu';
+}
+</script>
+<!--Left Nav Starts -->
+
+
+	<ul>			  
+	
+	    	
+	    	    <li class="">
+			   			<a href="../../../contents/index.htm">
+		                  Resource Home  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    <li class="selected">
+			   			<a href="../../../contents/videos/index.htm">
+		                  Videos  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    <li class="">
+			   			<a href="../../../contents/relatedresources/index.htm">
+		                  Related Resources  			                
+	                    </a>
+		        </li>
+		    
+         	
+	
+	
+	    	
+	    	    
+		    
+         	
+	<!--second tal block close-->  
+	
+</ul>
+
+
+<!--Left Nav Ends -->
+
+
+
+
+
+           			</nav>
+           			<main id="course_inner_media" aria-labelledby="media_title">
+      					 
+        <div class="" id="parent-fieldname-text">
+            
+            
+        </div>
+    
+      					     
+    
+    
+
+
+
+<script type="text/javascript">var caption_embed_1 ={'English - US': '/resources/res-18-010-a-2020-vision-of-linear-algebra-spring-2020/videos/the-big-picture-of-linear-algebra/rwLOfdfc4dw.srt'}</script>     
+     <div id="media-embed">
+         <div class="attention_message" id="embed_1">
+<p>Flash and JavaScript are required for this feature.</p>
+<p>Download the video from <a href="https://archive.org/download/mit-2020-vision/MIT_2020_Vision_Part_2_300k.mp4">Internet Archive</a>.</p>
+</div>
+     </div>
+    
+     <script type="text/javascript">ocw_embed_chapter_media('embed_1', 'https://www.youtube.com/v/rwLOfdfc4dw', 'youtube', '/resources/res-18-010-a-2020-vision-of-linear-algebra-spring-2020/videos/the-big-picture-of-linear-algebra', 'https://img.youtube.com/vi/rwLOfdfc4dw/0.jpg',0,0, 'https://ocw.mit.edu/resources/res-18-010-a-2020-vision-of-linear-algebra-spring-2020/videos/the-big-picture-of-linear-algebra/rwLOfdfc4dw.srt')</script>
+	 
+	 
+	 		
+	 		<div id="transcript1"></div>
+				 <script type="text/javascript">createThreePlayParams(2, 4681137, "embed_1", 0, 0)</script>
+			 
+	
+
+     <div id="media_resource_next_prev_nav" style="margin-top: 1em;">
+        <p>
+        
+            <a href="../../../contents/videos/the-column-space-of-a-matrix/index.htm">
+                <img src="../../../common/images/btn_previous_resource.png" style="margin: 0 30px 0 50px;" alt="Previous track" title="Previous track"></a>
+     	
+     	
+        
+            <a href="../../../contents/videos/orthogonal-vectors/index.htm"> 
+                <img src="../../../common/images/btn_next_resource.png" alt="Next track" title="Next track"></a>
+       
+       </p>
+     </div>
+ 
+
+
+<script type="text/javascript">
+		window.onload=function(){
+		init();
+		
+		}
+		var tabLinks = new Array();
+		var contentDivs = new Array();
+		function init() {
+		  // Grab the tab links and content divs from the page
+		  var tabListItems = document.getElementById('tabs').childNodes;
+		  for ( var i = 0; i < tabListItems.length; i++ ) {
+			if ( tabListItems[i].nodeName == "LI" ) {
+			  var tabLink = getFirstChildWithTagName( tabListItems[i], 'A' );
+			  var id = getHash( tabLink.getAttribute('href') );
+			  tabLinks[id] = tabLink;
+			  contentDivs[id] = document.getElementById( id );
+			}
+		  }
+		  // Assign onclick events to the tab links, and
+		  // highlight the first tab
+		  var i = 0;
+		  for ( var id in tabLinks ) {
+			tabLinks[id].onclick = showTab;
+			tabLinks[id].onfocus = function() { this.blur() };
+			if ( i == 0 ) tabLinks[id].className = 'selected';
+			i++;
+		  }
+		  // Hide all content divs except the first
+		  var i = 0;
+		  for ( var id in contentDivs ) {
+			if ( i != 0 ) contentDivs[id].className = 'tabContent hide';
+			i++;
+		  }
+		}
+		function showTab() {
+		  var selectedId = getHash( this.getAttribute('href') );
+		  // Highlight the selected tab, and dim all others.
+		  // Also show the selected content div, and hide all others.
+		  for ( var id in contentDivs ) {
+			if ( id == selectedId ) {
+			  tabLinks[id].className = 'selected';
+			  contentDivs[id].className = 'tabContent';
+			} else {
+			  tabLinks[id].className = '';
+			  contentDivs[id].className = 'tabContent hide';
+			}
+		  }
+		  // Stop the browser following the link
+		  return false;
+		}
+		function getFirstChildWithTagName( element, tagName ) {
+		  for ( var i = 0; i < element.childNodes.length; i++ ) {
+			if ( element.childNodes[i].nodeName == tagName ) return element.childNodes[i];
+		  }
+		}
+		function getHash( url ) {
+		  var hashPos = url.lastIndexOf ( '#' );
+		  return url.substring( hashPos + 1 );
+		}
+ </script>	
+ 
+
+  <div id="media_tabs">
+     
+        <ul id="tabs">
+            <li class="first">
+                <a href="#vid_about" class="selected">About this Video</a>
+            </li>
+            <li class="">
+                <a href="#vid_index" class="">Playlist</a>
+            </li>
+            <li class="">
+                <a href="#vid_playlist" class="">Transcript</a>
+            </li>
+            <li class="">
+                <a href="#vid_related" class="">Download this Video</a>
+            </li>
+        </ul>
+   
+        <div id="vid_about" itemprop="description" class="tabContent">
+<h2 class="subhead">Description</h2> <p>Multiplication by A transforms the row space to the column space. Professor Strang then reveals the Big Picture of Linear Algebra where all four fundamental subspaces interact.</p> <p><strong>Slides Used in this Video:</strong> Slides 10 through 14</p> <p><strong>Instructor:</strong> Gilbert Strang</p>
+</div>
+        <div id="vid_index" itemprop="description" class="tabContent hide">
+<div class="related-media-thumbnail">
+<a href="../../../contents/videos/a-new-way-to-start-linear-algebra/index.htm">
+<img src="https://img.youtube.com/vi/YrHlHbtiSM0/default.jpg" title="Intro: A New Way to Start Linear Algebra  " alt="Intro: A New Way to Start Linear Algebra  ">
+<p>Intro: A New Way to Start L...</p></a>
+</div>
+<div class="related-media-thumbnail">
+<a href="../../../contents/videos/the-column-space-of-a-matrix/index.htm">
+<img src="https://img.youtube.com/vi/azzrfdysfI0/default.jpg" title="Part 1: The Column Space of a Matrix " alt="Part 1: The Column Space of a Matrix ">
+<p>Part 1: The Column Space of...</p></a>
+</div>
+<div class="related-media-thumbnail-nolink">
+<div class="now-playing-resource">Now Playing</div>
+<img src="https://img.youtube.com/vi/rwLOfdfc4dw/default.jpg" title="Part 2: The Big Picture of Linear Algebra" alt="Part 2: The Big Picture of Linear Algebra">
+<p>Part 2: The Big Picture of ...</p>
+</div>
+<div class="related-media-thumbnail">
+<a href="../../../contents/videos/orthogonal-vectors/index.htm">
+<img src="https://img.youtube.com/vi/j8hEnyOiwhw/default.jpg" title="Part 3: Orthogonal Vectors" alt="Part 3: Orthogonal Vectors">
+<p>Part 3: Orthogonal Vectors</p></a>
+</div>
+<div class="related-media-thumbnail">
+<a href="../../../contents/videos/eigenvalues-and-eigenvectors/index.htm">
+<img src="https://img.youtube.com/vi/GyC3gl6weYo/default.jpg" title="Part 4: Eigenvalues and Eigenvectors" alt="Part 4: Eigenvalues and Eigenvectors">
+<p>Part 4: Eigenvalues and Eig...</p></a>
+</div>
+<div class="related-media-thumbnail">
+<a href="../../../contents/videos/singular-values-and-singular-vectors/index.htm">
+<img src="https://img.youtube.com/vi/IHO7_n7Y09s/default.jpg" title="Part 5: Singular Values and Singular Vectors" alt="Part 5: Singular Values and Singular Vectors">
+<p>Part 5: Singular Values and...</p></a>
+</div>
+</div>
+        <div id="vid_playlist" itemprop="description" class="tabContent hide">
+<ul><li><a class="transcript-link" title="Open in a new window." alt="Open in a new window." style="text-decoration: none; font-size: 1.0em;" target="_blank" text-decoration: none font-size: href="../../../contents/videos/the-big-picture-of-linear-algebra/rwLOfdfc4dw.pdf"> Download English-US transcript (PDF)</a></li></ul>
+<p><span m="14830">GILBERT STRANG:</span> <span m="15060">OK,</span> <span m="15290">in</span> <span m="15610">this</span> <span m="16450">second</span> <span m="16810">part,</span> <span m="18370">I'm</span> <span m="18610">going</span> <span m="18720">to</span> <span m="18820">start</span> <span m="19120">with</span> <span m="20200">linear</span> <span m="20620">equations,</span> <span m="21420">A</span> <span m="21700">times</span> <span m="22150">x</span> <span m="22450">equal</span> <span m="22750">b.</span> <span m="23470">And</span> <span m="23650">you</span> <span m="23800">see</span> <span m="24130">actually,</span> <span m="24490">the</span> <span m="24640">first</span> <span m="25240">real</span> <span m="25690">good</span> <span m="26080">starting</span> <span m="26530">point</span> <span m="26770">is</span> <span m="26980">A</span> <span m="27190">times</span> <span m="27550">x</span> <span m="27790">equals</span> <span m="28120">0.</span> <span m="29230">So</span> <span m="29590">are</span> <span m="29860">there</span> <span m="30610">any</span> <span m="31330">solutions</span> <span m="32740">to</span> <span m="33640">the</span> <span m="33760">matrix,</span> <span m="34480">any</span> <span m="34810">combinations</span> <span m="35800">of</span> <span m="36040">the</span> <span m="36580">columns</span> <span m="37390">that</span> <span m="37570">give</span> <span m="37810">0,</span> <span m="38320">any</span> <span m="38590">solutions</span> <span m="39250">to</span> <span m="39400">A</span> <span m="39820">times</span> <span m="40240">x</span> <span m="40540">equals</span> <span m="40870">0?</span></p>
+<p><span m="41470">Now,</span> <span m="42070">I'm</span> <span m="42280">multiplying</span> <span m="43240">a</span> <span m="43330">matrix</span> <span m="44050">A</span> <span m="44410">by</span> <span m="44650">a</span> <span m="44680">vector</span> <span m="45130">x</span> <span m="45850">in</span> <span m="47550">a</span> <span m="47650">way</span> <span m="47920">you'll</span> <span m="48220">know.</span> <span m="49170">I</span> <span m="49310">take</span> <span m="49660">rows</span> <span m="50380">of</span> <span m="50530">x</span> <span m="52660">times,</span> <span m="53470">it's</span> <span m="53800">called</span> <span m="54100">a</span> <span m="54190">dot</span> <span m="54580">product.</span> <span m="58330">Rows</span> <span m="58780">of</span> <span m="58930">A</span> <span m="59920">times</span> <span m="60400">x.</span> <span m="61000">So</span> <span m="61450">I</span> <span m="62020">have</span> <span m="62230">a</span> <span m="62290">row</span> <span m="62770">of</span> <span m="62890">numbers.</span> <span m="63580">And</span> <span m="63790">x</span> <span m="64090">is</span> <span m="64269">a</span> <span m="64330">column</span> <span m="64750">of</span> <span m="64870">numbers.</span> <span m="65650">I</span> <span m="65740">multiply</span> <span m="66310">those</span> <span m="66580">numbers</span> <span m="67090">and</span> <span m="67390">add</span> <span m="68050">to</span> <span m="68200">get</span> <span m="68560">the</span> <span m="68920">dot</span> <span m="69190">product.</span></p>
+<p><span m="70150">And</span> <span m="70300">I'm</span> <span m="70630">wondering,</span> <span m="71180">can</span> <span m="71260">I</span> <span m="71350">get</span> <span m="71530">0</span> <span m="72760">for</span> <span m="73180">each?</span> <span m="73630">Is</span> <span m="73890">every</span> <span m="74710">row--</span> <span m="75340">so</span> <span m="76120">having</span> <span m="76450">a</span> <span m="76540">0</span> <span m="77080">there</span> <span m="77380">is</span> <span m="77530">telling</span> <span m="77950">me,</span> <span m="78600">in</span> <span m="79120">geometry,</span> <span m="80320">that</span> <span m="80560">that</span> <span m="80770">row</span> <span m="81310">is</span> <span m="81520">perpendicular,</span> <span m="83490">orthogonal</span> <span m="84930">to</span> <span m="85560">that</span> <span m="85770">column.</span> <span m="87130">If</span> <span m="87210">a</span> <span m="87270">row</span> <span m="88200">dot</span> <span m="88440">product</span> <span m="88920">with</span> <span m="89130">a</span> <span m="89190">column</span> <span m="89730">gives</span> <span m="89970">me</span> <span m="90120">a</span> <span m="90180">0,</span> <span m="91010">then</span> <span m="91740">in</span> <span m="92550">n</span> <span m="92760">dimensional</span> <span m="93360">space,</span> <span m="94290">that</span> <span m="94620">row</span> <span m="95160">is</span> <span m="96180">perpendicular,</span> <span m="97050">90</span> <span m="97410">degree</span> <span m="97800">angle</span> <span m="98580">to</span> <span m="99060">that</span> <span m="100260">column</span> <span m="100680">x.</span> <span m="101580">So</span> <span m="101790">I'm</span> <span m="102000">looking</span> <span m="102420">to</span> <span m="102570">see,</span> <span m="103740">are</span> <span m="103890">there</span> <span m="104070">any</span> <span m="104280">vectors</span> <span m="104820">x</span> <span m="105120">that</span> <span m="105330">are</span> <span m="105780">perpendicular</span> <span m="106650">to</span> <span m="106860">all</span> <span m="107130">the</span> <span m="107250">rows?</span> <span m="108120">That's</span> <span m="108360">what</span> <span m="108510">Ax</span> <span m="109020">equals</span> <span m="109320">0</span> <span m="109610">is</span> <span m="109740">asking</span> <span m="110220">for.</span></p>
+<p><span m="110750">Oh,</span> <span m="110910">and</span> <span m="111000">that's</span> <span m="111240">what</span> <span m="111390">I've</span> <span m="111510">just</span> <span m="111720">said</span> <span m="111990">right</span> <span m="112200">there.</span> <span m="113220">I've</span> <span m="113370">used</span> <span m="113640">the</span> <span m="113730">word</span> <span m="114030">orthogonal.</span> <span m="114840">That's</span> <span m="115170">more</span> <span m="115470">of</span> <span m="115620">a</span> <span m="116070">high</span> <span m="116280">level</span> <span m="116610">word</span> <span m="116940">than</span> <span m="117120">perpendicular.</span> <span m="117910">So</span> <span m="118110">I'll</span> <span m="118260">stay</span> <span m="118590">with</span> <span m="119160">that.</span> <span m="119600">It sounds</span> <span m="119970">a</span> <span m="120030">little</span> <span m="120450">cooler.</span> <span m="121320">OK.</span></p>
+<p><span m="122040">And</span> <span m="122160">now,</span> <span m="123570">we</span> <span m="123780">can</span> <span m="124020">also</span> <span m="125910">look</span> <span m="126150">at</span> <span m="126270">that</span> <span m="126390">transpose.</span> <span m="127770">Oh,</span> <span m="128009">do</span> <span m="128100">you</span> <span m="128190">know</span> <span m="128400">what the</span> <span m="128550">transpose</span> <span m="129270">of</span> <span m="129389">a</span> <span m="129449">matrix</span> <span m="130020">is?</span> <span m="130710">I</span> <span m="130830">take</span> <span m="131130">those</span> <span m="131610">rows</span> <span m="132630">and</span> <span m="133050">flip</span> <span m="133710">the</span> <span m="133860">matrix,</span> <span m="134370">so</span> <span m="134550">that</span> <span m="134730">those</span> <span m="135330">rows</span> <span m="135690">become</span> <span m="136050">the</span> <span m="136140">columns.</span> <span m="137460">And</span> <span m="137580">the</span> <span m="138060">columns</span> <span m="138600">of</span> <span m="138750">A</span> <span m="139050">become</span> <span m="139380">the</span> <span m="139500">rows</span> <span m="140160">of</span> <span m="140340">A</span> <span m="140520">transpose.</span></p>
+<p><span m="141630">So</span> <span m="141810">I'll</span> <span m="141930">look</span> <span m="142170">at</span> <span m="142290">A</span> <span m="142500">transpose</span> <span m="143310">times--</span> <span m="144350">we'll</span> <span m="144840">call</span> <span m="145080">it</span> <span m="145170">y</span> <span m="145710">for</span> <span m="145920">the</span> <span m="146370">new</span> <span m="146640">problem.</span> <span m="147180">A</span> <span m="147360">transpose</span> <span m="148020">y</span> <span m="148470">is</span> <span m="148650">all</span> <span m="148840">0s.</span> <span m="149940">And</span> <span m="150090">then</span> <span m="150330">the</span> <span m="150420">null</span> <span m="150750">space</span> <span m="151290">will</span> <span m="151500">be</span> <span m="152560">any</span> <span m="153660">vector,</span> <span m="154260">any</span> <span m="154530">solutions,</span> <span m="155490">any</span> <span m="155730">y</span> <span m="156660">that's</span> <span m="156930">perpendicular</span> <span m="157770">to</span> <span m="159150">the</span> <span m="159450">rows</span> <span m="159930">of</span> <span m="160050">A</span> <span m="160200">transpose.</span> <span m="161440">So</span> <span m="164180">I</span> <span m="164360">would</span> <span m="164540">need</span> <span m="165920">couple</span> <span m="166220">of</span> <span m="166340">hours</span> <span m="166700">of</span> <span m="166820">teaching</span> <span m="167300">to</span> <span m="167450">develop</span> <span m="167900">this</span> <span m="168140">properly</span> <span m="169280">because</span> <span m="169550">we're</span> <span m="169760">talking</span> <span m="170240">here</span> <span m="170630">about</span> <span m="170960">the</span> <span m="171650">fundamental</span> <span m="173300">theorem</span> <span m="173690">of</span> <span m="173840">linear</span> <span m="174200">algebra,</span> <span m="175740">which</span> <span m="175880">tells</span> <span m="176270">me</span> <span m="176570">that</span> <span m="176970">the</span> <span m="177590">vectors</span> <span m="178130">in</span> <span m="178280">the</span> <span m="178370">null</span> <span m="178640">space,</span> <span m="179090">like</span> <span m="179360">that,</span> <span m="180680">are</span> <span m="180860">perpendicular</span> <span m="181790">to</span> <span m="182030">the</span> <span m="182960">vectors.</span> <span m="183830">These</span> <span m="184160">guys</span> <span m="184610">are.</span> <span m="184740">That's</span> <span m="185120">the</span> <span m="185240">row</span> <span m="185570">space.</span></p>
+<p><span m="186470">Oh,</span> <span m="186680">but</span> <span m="186830">maybe</span> <span m="187070">I</span> <span m="187190">have</span> <span m="187400">told</span> <span m="187730">you.</span> <span m="189170">We've</span> <span m="189500">said</span> <span m="190130">that,</span> <span m="190340">from</span> <span m="190640">this</span> <span m="190880">equation,</span> <span m="192200">that</span> <span m="192470">tells</span> <span m="192890">you</span> <span m="193820">the</span> <span m="193940">geometry</span> <span m="195170">that</span> <span m="195470">that</span> <span m="195740">row</span> <span m="196190">vectors</span> <span m="197210">are</span> <span m="197330">perpendicular</span> <span m="198260">to</span> <span m="198440">the</span> <span m="199010">x</span> <span m="199430">vector,</span> <span m="199910">the</span> <span m="200060">thing</span> <span m="200300">in</span> <span m="200420">the</span> <span m="200540">null</span> <span m="200750">space.</span> <span m="201240">So</span> <span m="201350">x</span> <span m="201650">is</span> <span m="201830">there.</span> <span m="202580">The</span> <span m="202700">rows</span> <span m="203120">are</span> <span m="203240">there.</span> <span m="203570">And</span> <span m="203660">they're</span> <span m="203810">perpendicular.</span></p>
+<p><span m="205370">Now,</span> <span m="206360">if</span> <span m="206510">I</span> <span m="206630">transpose</span> <span m="207320">the</span> <span m="207410">matrix,</span> <span m="208420">remember</span> <span m="208850">that</span> <span m="209090">means</span> <span m="209480">exchanging</span> <span m="210110">rows</span> <span m="210470">and</span> <span m="210590">columns,</span> <span m="211010">so</span> <span m="211140">I</span> <span m="211160">have</span> <span m="211280">a</span> <span m="211340">new</span> <span m="211580">matrix,</span> <span m="212690">new</span> <span m="212930">size</span> <span m="213530">even.</span> <span m="214460">It</span> <span m="214670">will</span> <span m="214940">the</span> <span m="215030">same--</span> <span m="215530">but</span> <span m="215690">it's</span> <span m="215900">a</span> <span m="215990">matrix.</span> <span m="216620">The</span> <span m="216710">same</span> <span m="217010">will</span> <span m="217130">be</span> <span m="217280">true</span> <span m="217580">for</span> <span m="217790">it.</span> <span m="218540">The</span> <span m="222620">rows</span> <span m="223100">become</span> <span m="223520">the</span> <span m="223640">columns.</span> <span m="225290">And</span> <span m="225710">the</span> <span m="227210">solutions</span> <span m="227900">to</span> <span m="228020">the</span> <span m="228170">new</span> <span m="228440">equation</span> <span m="228980">with</span> <span m="229180">A</span> <span m="229340">transpose</span> <span m="230360">go</span> <span m="230630">in</span> <span m="230750">that</span> <span m="230960">space.</span></p>
+<p><span m="232940">So</span> <span m="233420">then</span> <span m="233630">that</span> <span m="233780">little</span> <span m="233990">perpendicular</span> <span m="234770">sign</span> <span m="235100">is</span> <span m="235280">reminding</span> <span m="235820">us</span> <span m="236000">of</span> <span m="236120">the</span> <span m="236240">geometry.</span> <span m="237770">So</span> <span m="238190">rows</span> <span m="238880">perpendicular</span> <span m="239840">to</span> <span m="239960">the</span> <span m="240110">x's.</span> <span m="241550">Columns</span> <span m="242180">perpendicular</span> <span m="242960">to</span> <span m="243080">the</span> <span m="243230">y's.</span> <span m="243710">That's</span> <span m="243920">the</span> <span m="244010">best.</span> <span m="244430">I</span> <span m="244760">finally</span> <span m="245120">saw</span> <span m="245540">the</span> <span m="245660">right</span> <span m="245870">way</span> <span m="246020">to</span> <span m="246140">say</span> <span m="246440">that.</span></p>
+<p><span m="247130">So</span> <span m="247250">I</span> <span m="247310">have</span> <span m="247430">two</span> <span m="247790">pairs.</span> <span m="249380">And</span> <span m="249800">I</span> <span m="249920">know</span> <span m="250190">how</span> <span m="251090">big</span> <span m="251540">each</span> <span m="253340">of</span> <span m="253460">those</span> <span m="253730">four</span> <span m="254060">things</span> <span m="254450">are.</span> <span m="254600">Those</span> <span m="254930">are</span> <span m="254990">the</span> <span m="255170">four</span> <span m="256010">fundamental</span> <span m="256890">subspaces,</span> <span m="258550">two</span> <span m="259730">null</span> <span m="260120">spaces,</span> <span m="261459">two</span> <span m="261890">solution</span> <span m="262520">spaces</span> <span m="263030">with</span> <span m="263240">0.</span> <span m="263690">Null</span> <span m="264170">means</span> <span m="264490">0.</span> <span m="264980">So</span> <span m="265790">these</span> <span m="266120">x's</span> <span m="266630">are</span> <span m="266780">in</span> <span m="266930">the</span> <span m="267080">null</span> <span m="267620">space</span> <span m="268160">because</span> <span m="268550">of</span> <span m="268610">that</span> <span m="268820">0.</span> <span m="270350">Those</span> <span m="270680">are</span> <span m="270740">the</span> <span m="270920">n's.</span> <span m="272450">And</span> <span m="272930">then</span> <span m="273200">this</span> <span m="273440">is the</span> <span m="273860">column</span> <span m="274340">space</span> <span m="274820">and</span> <span m="274940">the</span> <span m="275030">row</span> <span m="275300">space.</span></p>
+<p><span m="277170">So</span> <span m="277220">we've</span> <span m="277340">got</span> <span m="277490">four</span> <span m="277820">spaces</span> <span m="278330">altogether,</span> <span m="278900">two</span> <span m="279170">pairs.</span> <span m="280130">And</span> <span m="280250">now,</span> <span m="280460">you</span> <span m="280610">get</span> <span m="280760">to</span> <span m="280910">see</span> <span m="281150">the</span> <span m="281270">big</span> <span m="281510">picture</span> <span m="281930">of</span> <span m="282050">linear</span> <span m="282380">algebra,</span> <span m="283260">where</span> <span m="283340">the</span> <span m="283490">four</span> <span m="284090">fundamental</span> <span m="284630">subspaces</span> <span m="285320">do</span> <span m="285530">their</span> <span m="285740">thing.</span> <span m="286040">There</span> <span m="286340">you</span> <span m="286490">go.</span> <span m="287910">You</span> <span m="288000">can</span> <span m="288750">die</span> <span m="289080">happy</span> <span m="289430">now.</span></p>
+<p><span m="290850">The</span> <span m="290970">row</span> <span m="291270">spaces</span> <span m="291900">there,</span> <span m="294340">those</span> <span m="294450">are</span> <span m="294720">rows</span> <span m="295290">of</span> <span m="295410">the</span> <span m="295500">matrix,</span> <span m="296190">independent</span> <span m="296880">rows</span> <span m="297240">of</span> <span m="297330">the</span> <span m="297450">matrix.</span> <span m="298060">That's</span> <span m="298140">why</span> <span m="298300">I</span> <span m="298350">don't</span> <span m="298530">put</span> <span m="298770">in</span> <span m="298950">all</span> <span m="299460">the</span> <span m="299550">rows.</span> <span m="301030">There</span> <span m="301210">are</span> <span m="301330">m</span> <span m="301690">rows.</span> <span m="302230">But</span> <span m="302410">I</span> <span m="302560">only</span> <span m="302800">put</span> <span m="303130">in</span> <span m="303730">independent</span> <span m="304300">ones.</span> <span m="304570">So</span> <span m="305260">that</span> <span m="305440">might</span> <span m="305680">be</span> <span m="305800">a</span> <span m="305860">smaller</span> <span m="306310">number</span> <span m="306656">r,</span> <span m="307350">r</span> <span m="307660">the</span> <span m="307780">rank.</span></p>
+<p><span m="308590">And</span> <span m="308800">here</span> <span m="309250">are</span> <span m="309430">the</span> <span m="309550">solutions,</span> <span m="310210">the</span> <span m="310330">guys</span> <span m="310840">perpendicular</span> <span m="311590">to</span> <span m="311640">them.</span> <span m="312100">This</span> <span m="312340">is</span> <span m="312490">the</span> <span m="312610">rows</span> <span m="313090">of</span> <span m="313210">the</span> <span m="313300">matrix.</span> <span m="314270">These</span> <span m="314470">are</span> <span m="314530">the</span> <span m="315010">vectors</span> <span m="315550">perpendicular</span> <span m="316270">to</span> <span m="316450">it.</span> <span m="316900">These</span> <span m="317260">are</span> <span m="317320">the</span> <span m="317440">columns</span> <span m="317980">of</span> <span m="318100">the</span> <span m="318190">matrix.</span> <span m="318920">These</span> <span m="319180">are</span> <span m="319240">the</span> <span m="319360">vectors</span> <span m="319840">perpendicular</span> <span m="320650">to</span> <span m="320800">the</span> <span m="320920">columns.</span> <span m="321730">You</span> <span m="321850">see</span> <span m="322060">it's</span> <span m="322270">just</span> <span m="322540">a</span> <span m="322720">natural</span> <span m="323530">splitting</span> <span m="324220">of</span> <span m="325870">the</span> <span m="326650">whole</span> <span m="327070">spaces</span> <span m="327670">of</span> <span m="327750">vectors</span> <span m="328330">into</span> <span m="329260">two</span> <span m="329590">pieces</span> <span m="330100">and</span> <span m="330250">two</span> <span m="330460">pieces.</span></p>
+<p><span m="331580">And</span> <span m="331690">I</span> <span m="331810">think</span> <span m="332050">of</span> <span m="332170">the</span> <span m="332260">matrix</span> <span m="332800">A,</span> <span m="333640">when</span> <span m="333790">it</span> <span m="333880">multiplies</span> <span m="334560">stuff</span> <span m="334900">there,</span> <span m="335680">it</span> <span m="335800">gives</span> <span m="336040">stuff</span> <span m="336430">here.</span> <span m="337570">When</span> <span m="337780">A</span> <span m="338230">multiplies</span> <span m="339100">a</span> <span m="339260">vector</span> <span m="339850">x,</span> <span m="341200">you</span> <span m="341440">get</span> <span m="342610">a</span> <span m="342670">combination</span> <span m="343270">of</span> <span m="343360">the</span> <span m="343450">columns.</span> <span m="343910">That</span> <span m="344020">with</span> <span m="344190">the</span> <span m="344290">very,</span> <span m="344780">very</span> <span m="345010">first</span> <span m="345390">slide.</span> <span m="346310">A</span> <span m="346540">times</span> <span m="346930">x</span> <span m="347200">is</span> <span m="347380">a</span> <span m="347440">combination</span> <span m="348100">of</span> <span m="348160">the</span> <span m="348250">columns.</span> <span m="349150">And</span> <span m="349270">then</span> <span m="349510">we</span> <span m="349660">look</span> <span m="349930">at</span> <span m="350050">some</span> <span m="350410">x's,</span> <span m="351820">if</span> <span m="352000">there</span> <span m="352150">are</span> <span m="352390">any,</span> <span m="354430">where</span> <span m="354700">A</span> <span m="355030">times</span> <span m="355450">x</span> <span m="355690">gives</span> <span m="355930">0.</span> <span m="356890">And</span> <span m="357520">there's</span> <span m="357910">0</span> <span m="358330">right</span> <span m="358570">there.</span> <span m="359650">OK.</span> <span m="361350">OK,</span> <span m="361720">so</span> <span m="361870">that's</span> <span m="362140">the</span> <span m="362230">big</span> <span m="362470">picture.</span></p>
+<p><span m="364010">And</span> <span m="364610">I'll</span> <span m="364700">just</span> <span m="364940">point</span> <span m="365270">to</span> <span m="365480">another</span> <span m="365990">little</span> <span m="368480">point</span> <span m="369040">that's</span> <span m="369230">hiding</span> <span m="369680">in</span> <span m="369770">this</span> <span m="369980">picture.</span> <span m="370700">You</span> <span m="370820">see</span> <span m="371030">that</span> <span m="371240">little</span> <span m="371540">symbol</span> <span m="372080">there,</span> <span m="372420">that</span> <span m="372640">little</span> <span m="372980">thing,</span> <span m="373280">and</span> <span m="373430">it's</span> <span m="373610">also</span> <span m="374000">here?</span> <span m="375580">What</span> <span m="375690">that</span> <span m="375930">means</span> <span m="376350">is</span> <span m="377070">that</span> <span m="377220">those</span> <span m="377520">guys</span> <span m="378000">are</span> <span m="378120">perpendicular</span> <span m="378990">to</span> <span m="379110">these.</span> <span m="380190">And</span> <span m="380310">these</span> <span m="380610">are</span> <span m="380700">perpendicular</span> <span m="381450">to</span> <span m="381570">these.</span></p>
+<p><span m="381840">So</span> <span m="382080">we</span> <span m="382200">have</span> <span m="382380">four</span> <span m="383220">subspaces,</span> <span m="384120">two</span> <span m="384390">pairs,</span> <span m="385020">two</span> <span m="385200">perpendicular</span> <span m="386010">pairs.</span> <span m="386880">And</span> <span m="387060">that's</span> <span m="388140">when</span> <span m="388380">you</span> <span m="388470">get</span> <span m="388710">the</span> <span m="388860">idea</span> <span m="389430">of</span> <span m="390240">knowing</span> <span m="390600">what</span> <span m="390810">they</span> <span m="390960">mean,</span> <span m="392070">knowing</span> <span m="392370">how</span> <span m="392520">to</span> <span m="392610">find</span> <span m="393000">them,</span> <span m="394320">at</span> <span m="394410">least</span> <span m="394650">for</span> <span m="394830">a</span> <span m="394890">small</span> <span m="395220">matrix,</span> <span m="396270">you've</span> <span m="396570">got</span> <span m="397080">the</span> <span m="397260">heart</span> <span m="397680">of</span> <span m="398710">linear</span> <span m="399020">algebra</span> <span m="399630">part</span> <span m="400050">one.</span> <span m="401700">This</span> <span m="401970">is</span> <span m="402120">the</span> <span m="402210">first</span> <span m="402600">half</span> <span m="402900">of</span> <span m="403020">linear</span> <span m="403380">algebra.</span></p>
+<p><span m="404230">OK,</span> <span m="404640">I'll</span> <span m="404760">just</span> <span m="405000">see</span> <span m="405240">what</span> <span m="405450">else</span> <span m="405750">there</span> <span m="405930">is.</span> <span m="407040">Oh,</span> <span m="407310">here,</span> <span m="408310">oh,</span> <span m="408450">well,</span> <span m="408720">this</span> <span m="409500">is</span> <span m="410940">another</span> <span m="411330">comment.</span> <span m="411840">I've</span> <span m="412320">hardly</span> <span m="412680">told</span> <span m="412980">you</span> <span m="413100">how</span> <span m="413250">to</span> <span m="413370">multiply</span> <span m="413910">two</span> <span m="414120">matrices.</span> <span m="415470">The</span> <span m="415590">usual</span> <span m="416010">way</span> <span m="416460">is</span> <span m="416790">rows</span> <span m="417540">times</span> <span m="417930">columns.</span></p>
+<p><span m="418980">But</span> <span m="419670">linear</span> <span m="420000">algebra</span> <span m="420450">being</span> <span m="421530">always</span> <span m="421920">interesting,</span> <span m="423030">there's</span> <span m="423270">another</span> <span m="423630">way</span> <span m="424530">that</span> <span m="424710">I</span> <span m="425220">happen</span> <span m="425490">to</span> <span m="425610">like,</span> <span m="426690">columns</span> <span m="428000">times</span> <span m="428370">rows.</span> <span m="429840">Now,</span> <span m="430170">there</span> <span m="430410">is</span> <span m="430530">a</span> <span m="430590">column</span> <span m="431130">times</span> <span m="431520">a</span> <span m="431580">row.</span> <span m="432690">Now,</span> <span m="432900">column</span> <span m="433320">times</span> <span m="433680">a</span> <span m="433740">row,</span> <span m="434100">we've</span> <span m="434400">seen</span> <span m="434730">that</span> <span m="434910">once</span> <span m="436860">for</span> <span m="437100">that</span> <span m="437370">rank</span> <span m="437820">one</span> <span m="438270">matrix.</span></p>
+<p><span m="438820">Do</span> <span m="438870">you</span> <span m="438930">remember</span> <span m="439350">I</span> <span m="439500">said</span> <span m="439800">that</span> <span m="439950">those</span> <span m="440640">rank</span> <span m="441000">one</span> <span m="441240">matrix,</span> <span m="441780">one</span> <span m="442110">column</span> <span m="442560">times</span> <span m="442850">is</span> <span m="442940">one</span> <span m="443190">row</span> <span m="443490">are</span> <span m="443580">the</span> <span m="443700">building</span> <span m="444150">blocks?</span> <span m="445020">Well,</span> <span m="445230">here</span> <span m="445440">is</span> <span m="445560">the</span> <span m="445650">building.</span> <span m="446580">Those</span> <span m="447030">are</span> <span m="447780">n</span> <span m="448020">of</span> <span m="448140">those</span> <span m="448740">blocks.</span> <span m="449660">A</span> <span m="449760">column</span> <span m="450210">times</span> <span m="450600">a</span> <span m="450660">row,</span> <span m="450915">a</span> <span m="451170">column</span> <span m="451590">times</span> <span m="451950">a</span> <span m="452010">row.</span> <span m="452640">And</span> <span m="452820">here</span> <span m="453090">is</span> <span m="453240">a</span> <span m="453300">reminder</span> <span m="454110">of</span> <span m="454470">the--</span> <span m="455730">oh,</span> <span m="455910">we've</span> <span m="456150">only--</span> <span m="456690">oh,</span> <span m="456840">we're</span> <span m="457690">coming</span> <span m="458010">up</span> <span m="458160">to</span> <span m="458310">A</span> <span m="458550">equal</span> <span m="458790">LU,</span> <span m="459240">the</span> <span m="459360">first</span> <span m="459720">one.</span> <span m="461520">Get</span> <span m="461760">on</span> <span m="461940">with</span> <span m="462090">it,</span> <span m="462570">Professor</span> <span m="463170">Strang.</span> <span m="464600">OK.</span></p>
+<p><span m="465570">OK,</span> <span m="466100">now</span> <span m="466370">we're</span> <span m="466490">solving</span> <span m="466970">equations.</span> <span m="467700">Now</span> <span m="467810">we're</span> <span m="467930">going</span> <span m="468060">to</span> <span m="468200">get</span> <span m="469070">L</span> <span m="469370">times</span> <span m="469900">U.</span> <span m="470840">So</span> <span m="472130">right.</span> <span m="473180">So</span> <span m="473360">there's</span> <span m="473630">two</span> <span m="473840">equations</span> <span m="474470">and</span> <span m="474570">two</span> <span m="474800">unknowns</span> <span m="476460">solved</span> <span m="476860">in</span> <span m="476970">high</span> <span m="477180">school</span> <span m="478140">and</span> <span m="478260">how.</span> <span m="479160">Do</span> <span m="479220">you</span> <span m="479280">remember</span> <span m="479670">how?</span> <span m="480300">That's</span> <span m="480540">the</span> <span m="480630">whole</span> <span m="480810">point.</span></p>
+<p><span m="481800">If</span> <span m="481980">I</span> <span m="483160">take</span> <span m="484000">twice</span> <span m="484420">that</span> <span m="484630">equation,</span> <span m="485260">so</span> <span m="485440">it's</span> <span m="485620">4x</span> <span m="486400">plus</span> <span m="486580">6y</span> <span m="487300">equal</span> <span m="487470">14,</span> <span m="488320">and</span> <span m="488440">subtract</span> <span m="489070">from</span> <span m="489280">this</span> <span m="489520">one,</span> <span m="490780">then</span> <span m="490990">I</span> <span m="491110">get</span> <span m="491310">an</span> <span m="491410">easy</span> <span m="491830">equation</span> <span m="492370">for</span> <span m="492610">only</span> <span m="492970">y</span> <span m="493210">by</span> <span m="493450">itself.</span> <span m="494980">So</span> <span m="495060">that's</span> <span m="495360">what</span> <span m="495540">I</span> <span m="495660">did.</span> <span m="496030">That's</span> <span m="496170">called</span> <span m="496510">elimination.</span> <span m="497310">I</span> <span m="497460">eliminated</span> <span m="498210">this</span> <span m="498510">4x.</span> <span m="499290">It's</span> <span m="499470">gone.</span></p>
+<p><span m="501030">It's</span> <span m="501330">2</span> <span m="501720">times</span> <span m="502110">that.</span> <span m="503400">That's</span> <span m="503730">why</span> <span m="503940">I</span> <span m="504030">chose</span> <span m="504480">to</span> <span m="504600">multiply</span> <span m="504975">it</span> <span m="505350">by</span> <span m="505620">2.</span> <span m="506550">Then</span> <span m="507060">2</span> <span m="507300">times</span> <span m="508490">this</span> <span m="508800">gives</span> <span m="509040">me</span> <span m="509220">4</span> <span m="509580">x's.</span> <span m="510000">When</span> <span m="510180">I</span> <span m="510240">subtract</span> <span m="510840">it,</span> <span m="511170">it's</span> <span m="511350">gone</span> <span m="512280">and</span> <span m="513059">I'm</span> <span m="513179">left</span> <span m="513390">with</span> <span m="513570">1y</span> <span m="514350">equal</span> <span m="514770">1.</span> <span m="515250">So</span> <span m="515909">I</span> <span m="516030">know</span> <span m="516240">the</span> <span m="516419">answer</span> <span m="516780">y</span> <span m="517049">equal</span> <span m="517320">1.</span> <span m="517980">And</span> <span m="518070">then</span> <span m="518250">I</span> <span m="518340">go</span> <span m="518520">backwards</span> <span m="519179">to</span> <span m="519570">x</span> <span m="519840">equal</span> <span m="520169">2</span> <span m="521190">because</span> <span m="521850">2x</span> <span m="522570">plus,</span> <span m="523080">this</span> <span m="523289">is</span> <span m="523409">now,</span> <span m="523980">3</span> <span m="524580">equals</span> <span m="524970">7.</span> <span m="525900">2x</span> <span m="526140">is</span> <span m="526290">4.</span> <span m="526830">x is</span> <span m="527310">2.</span></p>
+<p><span m="528900">And</span> <span m="531090">the</span> <span m="531870">real</span> <span m="532170">point</span> <span m="532470">about</span> <span m="533850">linear</span> <span m="534360">algebra</span> <span m="535500">done</span> <span m="535830">right</span> <span m="536790">is</span> <span m="537690">that</span> <span m="537930">all</span> <span m="538470">those</span> <span m="538650">steps</span> <span m="540790">can</span> <span m="541000">be</span> <span m="541150">expressed</span> <span m="541840">as</span> <span m="542080">a</span> <span m="542740">break</span> <span m="543000">up,</span> <span m="543610">another</span> <span m="544090">way</span> <span m="544510">to</span> <span m="544690">break</span> <span m="545080">up</span> <span m="545230">the</span> <span m="545380">matrix</span> <span m="545650">A</span> <span m="545920">into</span> <span m="547090">a</span> <span m="547180">lower</span> <span m="548320">triangular</span> <span m="549250">matrix.</span> <span m="549860">You</span> <span m="549970">see</span> <span m="550180">that</span> <span m="550350">that</span> <span m="550540">matrix</span> <span m="551050">is</span> <span m="551230">triangular.</span> <span m="552100">It's</span> <span m="552220">lower</span> <span m="552700">triangular.</span> <span m="553720">And</span> <span m="553840">this</span> <span m="554050">one</span> <span m="554260">is</span> <span m="554470">upper</span> <span m="554770">triangular.</span> <span m="555430">So</span> <span m="555640">those</span> <span m="555910">are</span> <span m="556000">called</span> <span m="556330">L</span> <span m="556570">and</span> <span m="556720">U.</span> <span m="557620">Yeah,</span> <span m="558160">yeah.</span></p>
+<p><span m="558790">So</span> <span m="559840">what</span> <span m="560260">we</span> <span m="560410">did</span> <span m="560650">here</span> <span m="561930">is</span> <span m="562090">expressed</span> <span m="562630">by</span> <span m="562870">that</span> <span m="563110">matrix</span> <span m="563590">multiplication.</span> <span m="564820">You</span> <span m="564970">really</span> <span m="565270">want</span> <span m="565480">to</span> <span m="565540">express</span> <span m="565990">everything,</span> <span m="566800">in</span> <span m="566980">the</span> <span m="567130">end,</span> <span m="567550">as</span> <span m="568210">multiplying</span> <span m="569050">a</span> <span m="569140">couple</span> <span m="569440">of</span> <span m="569530">matrices.</span> <span m="570190">Then</span> <span m="570400">you</span> <span m="570760">know</span> <span m="571420">exactly</span> <span m="571960">where</span> <span m="572170">you</span> <span m="572350">are.</span> <span m="573370">So</span> <span m="574180">that's</span> <span m="574660">the</span> <span m="574930">idea</span> <span m="575530">of</span> <span m="575680">elimination.</span></p>
+<p><span m="577340">And</span> <span m="577620">now,</span> <span m="578590">we</span> <span m="578800">only</span> <span m="579130">were</span> <span m="579340">doing</span> <span m="579640">a</span> <span m="579700">2</span> <span m="579940">by</span> <span m="580150">2</span> <span m="580390">matrix.</span> <span m="581450">You</span> <span m="581560">remember</span> <span m="582460">our</span> <span m="582610">little</span> <span m="582820">matrix</span> <span m="583960">was</span> <span m="584320">pathetic,</span> <span m="584920">2,</span> <span m="585120">3,</span> <span m="585320">4,</span> <span m="585680">7.</span> <span m="586660">That</span> <span m="586780">was</span> <span m="586990">our</span> <span m="587110">matrix</span> <span m="587660">A.</span> <span m="588250">We</span> <span m="588400">can't</span> <span m="588880">stop</span> <span m="589300">there.</span> <span m="590110">So</span> <span m="591010">linear</span> <span m="591340">algebra</span> <span m="591730">goes</span> <span m="592060">on</span> <span m="592420">to</span> <span m="593230">matrix</span> <span m="593740">of</span> <span m="593860">any</span> <span m="594100">size.</span></p>
+<p><span m="595550">And</span> <span m="595910">this</span> <span m="596180">is</span> <span m="596360">the</span> <span m="596540">way</span> <span m="597800">to</span> <span m="599600">find</span> <span m="600020">the</span> <span m="600290">triangular</span> <span m="600980">factor</span> <span m="601490">L</span> <span m="602270">and</span> <span m="602450">the</span> <span m="602630">upper</span> <span m="602930">triangular</span> <span m="603470">factor</span> <span m="603920">U.</span> <span m="604610">That</span> <span m="605150">would</span> <span m="605390">need</span> <span m="605750">more</span> <span m="606050">time.</span> <span m="607730">So</span> <span m="608250">all</span> <span m="608480">I</span> <span m="608540">want</span> <span m="608750">to</span> <span m="608810">say</span> <span m="609230">is,</span> <span m="610250">when</span> <span m="610610">you're</span> <span m="610880">doing</span> <span m="611360">elimination</span> <span m="612560">solving</span> <span m="613130">equations,</span> <span m="614330">then</span> <span m="614570">in</span> <span m="614690">the</span> <span m="614810">back</span> <span m="615140">of</span> <span m="615320">your</span> <span m="615500">mind</span> <span m="616490">or</span> <span m="616670">in</span> <span m="616760">the</span> <span m="616850">back</span> <span m="617360">page,</span> <span m="618320">you</span> <span m="618620">are</span> <span m="620180">producing</span> <span m="620780">an</span> <span m="620930">L</span> <span m="621800">matrix</span> <span m="622370">lower</span> <span m="623320">and</span> <span m="623480">a</span> <span m="623560">U</span> <span m="623900">matrix</span> <span m="624710">upper.</span> <span m="625700">So</span> <span m="627530">yeah.</span></p>
+<p><span m="628550">Let</span> <span m="628700">me</span> <span m="628850">see.</span> <span m="629170">Yeah,</span> <span m="629270">here</span> <span m="629480">we</span> <span m="629660">see</span> <span m="629900">them.</span> <span m="630470">The</span> <span m="631520">L</span> <span m="631850">matrix</span> <span m="632930">is</span> <span m="633170">all</span> <span m="633350">0s</span> <span m="633830">above.</span> <span m="635150">The</span> <span m="635300">U</span> <span m="635600">matrix</span> <span m="636230">is</span> <span m="636380">all</span> <span m="636590">0s</span> <span m="637070">below.</span> <span m="637670">And</span> <span m="637790">that's</span> <span m="638240">what</span> <span m="639020">is</span> <span m="639200">really</span> <span m="639650">happening.</span> <span m="642080">So</span> <span m="642920">that's</span> <span m="643160">what</span> <span m="643760">computer</span> <span m="644300">system</span> <span m="644720">totally</span> <span m="645200">focuses</span> <span m="645860">on.</span> <span m="646470">OK,</span> <span m="647030">that's</span> <span m="647330">the</span> <span m="647450">first</span> <span m="647810">slide</span> <span m="648170">of</span> <span m="648320">a</span> <span m="648380">new</span> <span m="649850">part.</span> <span m="650150">So</span> <span m="650300">I'll</span> <span m="650420">stop</span> <span m="650720">here</span> <span m="651380">and</span> <span m="651680">coming</span> <span m="652100">back</span> <span m="652430">to</span> <span m="652850">orthogonal</span> <span m="653600">vectors.</span> <span m="654470">Good.</span></p>
+</div>
+        <div id="vid_related" itemprop="description" class="tabContent hide">
+<h2 class="subhead">Free Downloads</h2>
+<h3 class="subsubhead">Video</h3>
+<ul>
+<li>Internet Archive (<a href="https://archive.org/download/mit-2020-vision/MIT_2020_Vision_Part_2_300k.mp4">MP4 - 26MB</a>)</li>
+</ul>
+<br>
+<h3 class="subsubhead">Caption</h3>
+<ul>
+<li>English-US (<a href="../../../contents/videos/the-big-picture-of-linear-algebra/rwLOfdfc4dw.srt">SRT</a>)</li>
+</ul>
+</div>
+    
+   </div>  
+
+
+
+      					 
+        <div class="" id="parent-fieldname-bottom_html_area">
+            
+            
+        </div>
+    
+               </main><!--Course_inner_media tag close -->
+           		</div>
+<!--Course_wrapper tag close -->
+            </div>
+<!--left tag close -->
+            <aside id="right">
+                <!--Begin Right Portion -->
+                    <div>
+    
+
+
+
+</div>
+
+                	<div>
+    
+
+
+
+</div>
+
+
+        <div class="" id="parent-fieldname-rsi_top_html_area">
+            
+            
+        </div>
+    
+
+<!-- RSI google ad space-->
+
+
+
+<div id="google_ads">    
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script type="text/javascript">var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];</script>
+    <script type="text/javascript">
+googletag.cmd.push(function() {googletag.defineSlot('/1064917/VIDEO_INDIVIDUAL_SLOT_A_DL', [[300, 250], [300, 300], [180, 200], [180, 150], [160, 600]], 'VIDEO_INDIVIDUAL_SLOT_A_DL').addService(googletag.pubads());googletag.defineSlot('/1064917/VIDEO_INDIVIDUAL_SLOT_B_DL', [[300, 250], [300, 300], [180, 200], [180, 150], [160, 600]], 'VIDEO_INDIVIDUAL_SLOT_B_DL').addService(googletag.pubads());googletag.defineSlot('/1064917/VIDEO_INDIVIDUAL_SLOT_C_DL', [[300, 250], [300, 300], [180, 200], [180, 150], [160, 600]], 'VIDEO_INDIVIDUAL_SLOT_C_DL').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+ googletag.enableServices();
+});</script>
+    <script language="javascript" type="text/javascript">
+googletag.cmd.push(function() {googletag.pubads().set("TYPE","HOUSE");googletag.pubads().set("DEPARTMENT","RES");googletag.pubads().set("CRS_BEG2","18");googletag.pubads().set("CRS_END","-010");googletag.pubads().set("SESSION","S");googletag.pubads().set("YEAR","20");})
+</script>
+    
+    <div id="VIDEO_INDIVIDUAL_SLOT_A_DL">
+    	<script>googletag.cmd.push(function() { googletag.display('VIDEO_INDIVIDUAL_SLOT_A_DL'); });</script>
+    </div>
+    <div id="VIDEO_INDIVIDUAL_SLOT_B_DL">
+    	<script>googletag.cmd.push(function() { googletag.display('VIDEO_INDIVIDUAL_SLOT_B_DL'); });</script>
+    </div>
+    <div id="VIDEO_INDIVIDUAL_SLOT_C_DL">
+    	<script>googletag.cmd.push(function() { googletag.display('VIDEO_INDIVIDUAL_SLOT_C_DL'); });</script>
+    </div>
+</div>
+
+<!-- End RSI ads--> 
+
+
+<div>
+    
+
+
+
+</div>
+
+            </aside><!--Right div close -->
+            <div class="clear"></div>
+        </div>
+<!--grid tag close -->
+      </div>
+		
+		<footer id="bottom">
+			<div id="grid">
+				
+<div id="portletwrapper-6f63772e626f74746f6d706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d666f6f746572" class="portletWrapper kssattr-portlethash-6f63772e626f74746f6d706f72746c65746d616e616765720a636f6e746578740a2f506c6f6e650a736974652d666f6f746572">
+<div class="portletStaticText portlet-static-site-footer"><div id="footer">
+<nav aria-label="Footer">     <nav id="foot-c1" class="grid_2 alpha" aria-labelledby="f-find-courses">       <span class="footer" id="f-find-courses" aria-hidden="true">Find Courses</span>
+<ul class="foot-bullet" role="presentation">
+    <li><a href="https://ocw.mit.edu/courses/find-by-topic/">Find by Topic</a></li>
+    <li><a href="https://ocw.mit.edu/courses/find-by-number/">Find by Course Number</a></li>
+    <li><a href="https://ocw.mit.edu/courses/find-by-department/">Find by Department</a></li>
+    <li><a href="https://ocw.mit.edu/courses/new-courses/">New Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/most-visited-courses/">Most Visited Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/ocw-scholar/">OCW Scholar Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/audio-video-courses/">Audio/Video Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/online-textbooks/">Online Textbooks</a></li>
+    <li><a href="https://ocw.mit.edu/courses/instructor-insights/">Instructor Insights</a></li>
+    <li><a href="https://ocw.mit.edu/resources/">Supplemental Resources</a></li>
+    <li><a href="https://ocw.mit.edu/courses/mitx-related-courseware/">MITx &amp; Related OCW Courses</a></li>
+    <li><a href="https://ocw.mit.edu/courses/mit-open-learning-library/">MIT Open Learning Library</a></li>
+    <li><a href="https://ocw.mit.edu/courses/translated-courses/">Translated Courses</a></li>
+</ul>
+</nav>
+<div id="foot-c2" class="grid_2"><nav aria-labelledby="f-for-educators">         <span id="f-for-educators" class="footer" aria-hidden="true">For Educators</span>
+<ul class="foot-bullet" role="presentation">
+    <li><a href="https://ocw.mit.edu/educator/chalk-radio-podcast/">Chalk Radio Podcast</a></li>
+    <li><a href="https://ocw.mit.edu/educator/">OCW Educator Portal </a></li>
+    <li><a href="https://ocw.mit.edu/courses/instructor-insights/">Instructor Insights by Department</a></li>
+    <li><a href="https://openlearning.mit.edu/campus/digital-innovations/" aria-label="External Link: Residential Digital Innovations">Residential Digital Innovations </a></li>
+    <li><a href="https://ocw.mit.edu/high-school/">OCW Highlights for High School</a></li>
+    <li><a href="https://ocw.mit.edu/educator/additional-resources/">Additional Resources</a></li>
+</ul>
+</nav></div>
+<nav class="grid_2" id="foot-c3" aria-labelledby="f-donate">       <span id="f-donate" class="footer" aria-hidden="true">Give Now</span>
+<ul class="foot-bullet" role="presentation">
+    <li><a href="https://ocw.mit.edu/give/">Make a Donation</a></li>
+    <li><a href="https://ocw.mit.edu/give/why-give/">Why Give?</a></li>
+    <li><a href="https://ocw.mit.edu/give/our-supporters/">Our Supporters</a></li>
+    <li><a href="https://ocw.mit.edu/give/other-ways-to-contribute/">Other Ways to Contribute</a></li>
+    <li><a href="https://ocw.mit.edu/support/">Become a Corporate Sponsor</a></li>
+</ul>
+</nav>
+<div class="grid_2" id="foot-c4">
+<nav aria-labelledby="f-about">         <span id="f-about" class="footer" aria-hidden="true">About</span>
+<ul class="foot-bullet" role="presentation">
+    <li><a href="https://ocw.mit.edu/about/">About OpenCourseWare</a></li>
+    <li><a href="https://ocw.mit.edu/about/site-statistics/">Site Statistics</a></li>
+    <li><a href="https://ocw.mit.edu/about/ocw-stories/">OCW Stories</a></li>
+    <li><a href="https://ocw.mit.edu/about/newsletter/">News</a></li>
+    <li><a href="https://ocw.mit.edu/about/press-releases/">Press Releases</a></li>
+</ul>
+</nav><!--about-->       <nav aria-labelledby="f-tools">         <span id="f-tools" class="footer" aria-hidden="true">Tools</span>
+<ul class="foot-bullet" role="presentation">
+    <li><a href="https://ocw.mit.edu/help/">Help &amp; FAQs</a></li>
+    <li><a href="https://ocw.mit.edu/about/contactus">Contact Us</a></li>
+    <li><a href="https://ocw.mit.edu/help/site-map/">Site Map</a></li>
+    <li><a href="../../../common/terms/index.htm">Privacy &amp; Terms of Use</a></li>
+    <li><a href="https://ocw.mit.edu/help/rss/">RSS Feeds</a></li>
+</ul>
+</nav><!--tools-->
+</div>
+</nav> <aside style="min-height: 289px;" aria-labelledby="f-our-corporate-supporters" class="grid_4 omega" id="foot-c5">           <span aria-hidden="true" class="footer" id="f-our-corporate-supporters">Our Corporate Supporters</span>           <!-- HOME_CORP_LOGO_1 -->
+<div id="div-gpt-ad-1388181177156-0" class="sponsors_google_ads_even"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-0'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_2 -->
+<div id="div-gpt-ad-1388181177156-1" class="sponsors_google_ads_odd"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-1'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_3 -->
+<div id="div-gpt-ad-1388181177156-2" class="sponsors_google_ads_even"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-2'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_4 -->
+<div id="div-gpt-ad-1388181177156-3" class="sponsors_google_ads_odd"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-3'); });
+            </script></div>
+<!-- HOME_CORP_LOGO_5 -->
+<div id="div-gpt-ad-1388181177156-4" class="sponsors_google_ads_even"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-4'); });
+              </script></div>
+<!-- HOME_CORP_LOGO_6 -->
+<div id="div-gpt-ad-1388181177156-5" class="sponsors_google_ads_odd"><script type="text/javascript">
+              googletag.cmd.push(function() { googletag.display('div-gpt-ad-1388181177156-5'); });
+              </script></div>
+</aside>
+<div class="grid_12 alpha omega" itemprop="publisher" itemscope="" itemtype="http://schema.org/CollegeOrUniversity">
+<h4 class="footer" style="border-top: thin solid #d5c9ba; padding-top: 10px; margin-bottom: 10px;">About <span itemprop="name">MIT OpenCourseWare</span>
+</h4>
+<p style="color: #999; font-size: 1em; line-height: 1.5em; margin-top: 10px;" itemprop="description">MIT OpenCourseWare makes the materials used in the teaching of almost all of MIT's subjects available on the Web, free of charge. With more than 2,400 courses available, OCW is delivering on the promise of open sharing of knowledge. <a href="http://ocw.mit.edu/about/">Learn more »</a></p>
+</div>
+<div id="foot-copy" class="grid_12 alpha omega" style="border-top: none;">
+<a href="http://web.mit.edu"><img src="../../../common/images/logo_mit.png" alt="Massachusetts Institute of Technology logo and name." style="width: 195; height: 44;"></a><a href="http://odl.mit.edu"><img src="https://ocw.mit.edu/images/logo_odl.png" alt="MIT Office of Digital Learning logo and name." style="width: 289; height: 54; vertical-align: top;"></a><a href="http://www.oeconsortium.org/"><img src="https://ocw.mit.edu/images/logo_oec.png" alt="Open Education Consortium logo." style="width: 219px; height: 59px; vertical-align: top;"></a><a rel="license" itemprop="useRightsUrl" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="../../../common/images/cc_by-nc-sa.png" alt="Creative Commons logo with terms BY-NC-SA." style="width: 126px; height: 44px; margin-right: 0; margin-left: 13px;"></a>
+<p class="copyright">© 2001–2018<br>
+Massachusetts Institute of Technology</p>
+<p style="font-size: 0.9em; margin-bottom: 15px;">Your use of the MIT OpenCourseWare site and materials is subject to our <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons License</a> and other <a href="../../../common/terms/index.htm" rel="cc:morePermissions">terms of use</a>.</p>
+</div>
+</div></div>
+
+</div>
+
+
+
+
+
+                
+			</div> <!-- bottom grid end -->
+		</footer><!-- footer bottom end -->
+
+
+   </body>
+ </html>

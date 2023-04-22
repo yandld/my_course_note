@@ -1,0 +1,1160 @@
+1
+00:00:16,820 --> 00:00:20,470
+GILBERT STRANG: OK, here's
+the, well, the title slide.
+
+2
+00:00:20,470 --> 00:00:22,750
+Since this year
+happened to be 2020,
+
+3
+00:00:22,750 --> 00:00:25,030
+and that means clear
+vision, I thought
+
+4
+00:00:25,030 --> 00:00:30,430
+I'd get that into the
+title of these slides.
+
+5
+00:00:30,430 --> 00:00:39,880
+And then you've seen in these
+six pieces as a sort of look
+
+6
+00:00:39,880 --> 00:00:45,490
+ahead, and I'm going to start on
+that first piece, A equals CR.
+
+7
+00:00:45,490 --> 00:00:50,200
+That's the new way I like to
+start teaching linear algebra.
+
+8
+00:00:50,200 --> 00:00:51,990
+And I'll tell you why.
+
+9
+00:00:51,990 --> 00:00:54,640
+OK, oh, here, we
+have a few examples.
+
+10
+00:00:54,640 --> 00:00:57,340
+Well, that will
+lead to our ideas.
+
+11
+00:00:57,340 --> 00:00:59,870
+You see that matrix, A0.
+
+12
+00:00:59,870 --> 00:01:04,480
+A matrix is just a square
+or a rectangle of numbers.
+
+13
+00:01:04,480 --> 00:01:08,920
+But those numbers
+have special features.
+
+14
+00:01:08,920 --> 00:01:14,110
+If you look closely, well,
+you say 1, 3, 2 as row 1.
+
+15
+00:01:14,110 --> 00:01:16,810
+And then what do
+you see for row 3?
+
+16
+00:01:16,810 --> 00:01:18,130
+2, 6, 4.
+
+17
+00:01:18,130 --> 00:01:23,350
+And those are two vectors
+in the same direction.
+
+18
+00:01:23,350 --> 00:01:24,010
+Why is that?
+
+19
+00:01:24,010 --> 00:01:28,950
+Because 2, 6, 4 is
+exactly 2 times 1, 3, 2.
+
+20
+00:01:28,950 --> 00:01:32,080
+And in the middle there
+is 4 times 1, 3, 2.
+
+21
+00:01:32,080 --> 00:01:35,860
+So I have three rows
+in the same direction.
+
+22
+00:01:35,860 --> 00:01:38,410
+And actually, also,
+this is the magic.
+
+23
+00:01:38,410 --> 00:01:40,705
+Can I tell you this
+right at the start?
+
+24
+00:01:40,705 --> 00:01:43,390
+The columns, look
+at the columns.
+
+25
+00:01:43,390 --> 00:01:44,950
+1, 4, 2.
+
+26
+00:01:44,950 --> 00:01:48,280
+If I multiply that
+by 3, I get 3, 12, 6.
+
+27
+00:01:48,280 --> 00:01:50,790
+If I multiply it by
+2, I get 2, 8, 4.
+
+28
+00:01:50,790 --> 00:01:54,610
+So somehow,
+magically, the columns
+
+29
+00:01:54,610 --> 00:01:57,790
+are in the same direction
+exactly when the rows
+
+30
+00:01:57,790 --> 00:01:59,240
+are in the same direction.
+
+31
+00:01:59,240 --> 00:02:00,040
+They're different.
+
+32
+00:02:00,040 --> 00:02:02,140
+That's what linear
+algebra is about,
+
+33
+00:02:02,140 --> 00:02:05,580
+the relations between
+columns and rows.
+
+34
+00:02:05,580 --> 00:02:10,270
+OK, and well, here's
+another one I'll look at.
+
+35
+00:02:10,270 --> 00:02:15,800
+There again, you see row
+1 plus row 2 equal row 3.
+
+36
+00:02:15,800 --> 00:02:19,970
+So it's not quite like
+this where every row
+
+37
+00:02:19,970 --> 00:02:22,730
+was in the same direction.
+
+38
+00:02:22,730 --> 00:02:27,320
+But here is if I add rows
+1 and 2, I get row 2.
+
+39
+00:02:27,320 --> 00:02:30,830
+So that's a matrix
+of rank 2, we'll say.
+
+40
+00:02:30,830 --> 00:02:31,850
+You'll see it.
+
+41
+00:02:31,850 --> 00:02:36,650
+OK, then here here, S is
+for symmetric matrices.
+
+42
+00:02:36,650 --> 00:02:38,450
+Those are the kings
+of linear algebra.
+
+43
+00:02:38,450 --> 00:02:41,870
+And here are a
+few small samples.
+
+44
+00:02:41,870 --> 00:02:44,870
+And the queens of
+linear algebra are
+
+45
+00:02:44,870 --> 00:02:51,100
+these matrices I call Q. Those
+are called orthogonal matrices.
+
+46
+00:02:51,100 --> 00:02:53,570
+Orthogonal meaning
+perpendicular.
+
+47
+00:02:53,570 --> 00:03:00,090
+So and they tend to
+express a rotation.
+
+48
+00:03:00,090 --> 00:03:03,350
+So that's a rotation matrix,
+an orthogonal matrix.
+
+49
+00:03:03,350 --> 00:03:05,570
+That rotates the plane.
+
+50
+00:03:05,570 --> 00:03:08,240
+And there is a
+pretty general matrix
+
+51
+00:03:08,240 --> 00:03:09,995
+that we'll see at the very end.
+
+52
+00:03:09,995 --> 00:03:14,760
+OK, so I'm into the start
+of the column space.
+
+53
+00:03:14,760 --> 00:03:19,400
+So that's a word I don't use in
+the videos for quite a while.
+
+54
+00:03:19,400 --> 00:03:22,460
+But here, you see I'm using
+it in the first minutes.
+
+55
+00:03:22,460 --> 00:03:24,360
+So I look at a matrix.
+
+56
+00:03:24,360 --> 00:03:26,540
+Well, first, let's
+just remember how
+
+57
+00:03:26,540 --> 00:03:29,440
+to multiply a
+matrix by a vector.
+
+58
+00:03:29,440 --> 00:03:32,570
+OK, there is a matrix
+A. There is a vector
+
+59
+00:03:32,570 --> 00:03:34,580
+x with three components.
+
+60
+00:03:34,580 --> 00:03:37,160
+And the way I like
+to multiply them
+
+61
+00:03:37,160 --> 00:03:40,490
+is to take the columns of A.
+That's what I'm focusing on,
+
+62
+00:03:40,490 --> 00:03:44,210
+columns of A. There
+they are, 1, 2, and 3.
+
+63
+00:03:44,210 --> 00:03:49,310
+I multiply them by those three
+numbers x1, x2, x3, and I add.
+
+64
+00:03:49,310 --> 00:03:52,280
+And that's called a
+linear combination.
+
+65
+00:03:52,280 --> 00:03:56,300
+Linear because nothing is
+squared or cubed or anything.
+
+66
+00:03:56,300 --> 00:03:59,840
+And combination because
+I'm putting them together,
+
+67
+00:03:59,840 --> 00:04:01,430
+adding them together.
+
+68
+00:04:01,430 --> 00:04:03,800
+OK, so that's the idea.
+
+69
+00:04:03,800 --> 00:04:08,480
+And now, the big idea
+is in that top line.
+
+70
+00:04:08,480 --> 00:04:11,280
+I want to think of
+all combinations.
+
+71
+00:04:11,280 --> 00:04:14,150
+So this is one
+particular combination
+
+72
+00:04:14,150 --> 00:04:17,760
+with a particular
+x1 and x2 and x3.
+
+73
+00:04:17,760 --> 00:04:22,610
+But now, I think of
+every x1 and x2 and x3,
+
+74
+00:04:22,610 --> 00:04:25,160
+all the vectors
+that I could get.
+
+75
+00:04:25,160 --> 00:04:27,890
+Well, of course, I could
+get the first column
+
+76
+00:04:27,890 --> 00:04:30,410
+by taking 1 and 0 and 0.
+
+77
+00:04:30,410 --> 00:04:32,120
+That would give me
+the first column.
+
+78
+00:04:32,120 --> 00:04:36,530
+But it's really mixtures of
+the columns that this produces.
+
+79
+00:04:36,530 --> 00:04:38,690
+And it fills out.
+
+80
+00:04:38,690 --> 00:04:41,840
+It fills out, in this
+case, a whole plane
+
+81
+00:04:41,840 --> 00:04:43,340
+in three dimensions.
+
+82
+00:04:43,340 --> 00:04:45,160
+These vectors have
+three components.
+
+83
+00:04:45,160 --> 00:04:46,910
+We're in three dimensions.
+
+84
+00:04:46,910 --> 00:04:50,480
+And can you just
+imagine in your head,
+
+85
+00:04:50,480 --> 00:04:55,610
+two lines meeting at 0, 0, 0.
+
+86
+00:04:55,610 --> 00:04:57,680
+So they cross.
+
+87
+00:04:57,680 --> 00:04:59,180
+But I just have two lines.
+
+88
+00:04:59,180 --> 00:05:04,100
+And now, I fill in
+between those lines.
+
+89
+00:05:04,100 --> 00:05:06,680
+Filling in between
+those two lines
+
+90
+00:05:06,680 --> 00:05:09,430
+is taking the
+linear combinations.
+
+91
+00:05:09,430 --> 00:05:10,820
+That's where they are.
+
+92
+00:05:10,820 --> 00:05:14,270
+And the result is I get a plane.
+
+93
+00:05:14,270 --> 00:05:16,580
+I do not get the whole
+space because nothing
+
+94
+00:05:16,580 --> 00:05:20,720
+is going in a third
+direction for this matrix.
+
+95
+00:05:20,720 --> 00:05:21,860
+All right.
+
+96
+00:05:21,860 --> 00:05:24,230
+So let's see more about this.
+
+97
+00:05:24,230 --> 00:05:26,960
+So that's that
+word column space.
+
+98
+00:05:26,960 --> 00:05:29,690
+And I use the
+capital C for that.
+
+99
+00:05:29,690 --> 00:05:32,300
+And it's all the
+vectors I can get
+
+100
+00:05:32,300 --> 00:05:35,610
+that way, all the
+combinations of the columns.
+
+101
+00:05:35,610 --> 00:05:36,650
+And now I ask.
+
+102
+00:05:36,650 --> 00:05:39,350
+Oh, well, maybe I just
+answered this question.
+
+103
+00:05:39,350 --> 00:05:40,400
+Sorry.
+
+104
+00:05:40,400 --> 00:05:44,780
+I ask, is the column space,
+all the combinations,
+
+105
+00:05:44,780 --> 00:05:52,700
+is it the whole 3D space, which
+everybody calls R3 for real 3,
+
+106
+00:05:52,700 --> 00:05:55,700
+or is it a plane, or
+is it just a line?
+
+107
+00:05:55,700 --> 00:05:58,250
+Well, the answer is plane.
+
+108
+00:05:58,250 --> 00:06:00,710
+That probably even
+gives us the answer.
+
+109
+00:06:00,710 --> 00:06:02,630
+That's the good thing
+about this subject.
+
+110
+00:06:02,630 --> 00:06:07,340
+The answer is a plane because
+I have two different lines that
+
+111
+00:06:07,340 --> 00:06:09,410
+meet at the 0.
+
+112
+00:06:09,410 --> 00:06:12,890
+And when I fill in between
+them, I have a flat plane.
+
+113
+00:06:12,890 --> 00:06:14,990
+I don't go in the
+third direction.
+
+114
+00:06:14,990 --> 00:06:15,890
+Good.
+
+115
+00:06:15,890 --> 00:06:20,990
+So that's the column
+space for this matrix.
+
+116
+00:06:20,990 --> 00:06:23,960
+And here's a little
+more saying about that.
+
+117
+00:06:23,960 --> 00:06:26,760
+We kept column 1.
+
+118
+00:06:26,760 --> 00:06:30,030
+And we kept column 2
+because you remember
+
+119
+00:06:30,030 --> 00:06:33,203
+those two columns, the
+first two, were different.
+
+120
+00:06:33,203 --> 00:06:34,620
+They went in
+different directions.
+
+121
+00:06:34,620 --> 00:06:36,580
+They go in different directions.
+
+122
+00:06:36,580 --> 00:06:40,080
+We did not keep the third
+column because it was just
+
+123
+00:06:40,080 --> 00:06:41,310
+the sum of the first two.
+
+124
+00:06:41,310 --> 00:06:44,760
+It's on the plane, nothing new.
+
+125
+00:06:44,760 --> 00:06:49,890
+So the real meat of the matrix
+A is in the column matrix C
+
+126
+00:06:49,890 --> 00:06:52,410
+that has just the two columns.
+
+127
+00:06:52,410 --> 00:06:53,700
+And what about R?
+
+128
+00:06:53,700 --> 00:06:58,980
+Because this is my plan
+for the first few weeks,
+
+129
+00:06:58,980 --> 00:07:02,040
+first two to three
+weeks of linear algebra,
+
+130
+00:07:02,040 --> 00:07:05,190
+is to understand.
+
+131
+00:07:05,190 --> 00:07:09,930
+So that 5, 5, 3 would be called
+a dependent vector because it
+
+132
+00:07:09,930 --> 00:07:12,390
+depends on the first two.
+
+133
+00:07:12,390 --> 00:07:14,730
+Those were independent.
+
+134
+00:07:14,730 --> 00:07:20,190
+So those are the two that
+I keep in the matrix C.
+
+135
+00:07:20,190 --> 00:07:23,940
+And then that matrix
+R, oh, well, now I'm
+
+136
+00:07:23,940 --> 00:07:25,500
+multiplying two matrices.
+
+137
+00:07:25,500 --> 00:07:26,850
+And you know how to do that.
+
+138
+00:07:26,850 --> 00:07:30,880
+But I always have another
+way to look at it.
+
+139
+00:07:30,880 --> 00:07:34,155
+So the way I look at it
+is by linear combinations.
+
+140
+00:07:34,155 --> 00:07:35,880
+Do you remember those?
+
+141
+00:07:35,880 --> 00:07:40,140
+So multiplying is a
+combination of these guys.
+
+142
+00:07:40,140 --> 00:07:43,170
+First, I have 1 of
+the first column.
+
+143
+00:07:43,170 --> 00:07:44,870
+That's my first column.
+
+144
+00:07:44,870 --> 00:07:47,880
+And the next time, I have
+1 of the second column.
+
+145
+00:07:47,880 --> 00:07:49,470
+That's my second vector.
+
+146
+00:07:49,470 --> 00:07:54,640
+And the third one is this
+guy, 1 of that and 1 of that.
+
+147
+00:07:54,640 --> 00:07:58,260
+So these two are the independent
+ones, and that's dependent.
+
+148
+00:07:58,260 --> 00:08:00,930
+And a full set of
+independent ones
+
+149
+00:08:00,930 --> 00:08:04,200
+is called a basis,
+really fundamental.
+
+150
+00:08:04,200 --> 00:08:07,050
+So I guess I think that
+linear algebra should just
+
+151
+00:08:07,050 --> 00:08:11,580
+start with these key
+ideas, just go with them.
+
+152
+00:08:11,580 --> 00:08:13,650
+And we learned something.
+
+153
+00:08:13,650 --> 00:08:15,250
+It almost falls in our laps.
+
+154
+00:08:15,250 --> 00:08:18,870
+It's a first great
+and not obvious
+
+155
+00:08:18,870 --> 00:08:21,690
+fact about linear algebra.
+
+156
+00:08:21,690 --> 00:08:25,690
+I'm just amazed to have it here.
+
+157
+00:08:25,690 --> 00:08:32,780
+The number of independent
+columns in A, which it was two,
+
+158
+00:08:32,780 --> 00:08:37,340
+is equal to the number of
+independent rows in R, also
+
+159
+00:08:37,340 --> 00:08:37,980
+two.
+
+160
+00:08:37,980 --> 00:08:41,570
+You remember that we had
+two rows and two columns?
+
+161
+00:08:41,570 --> 00:08:47,180
+So two columns first in C,
+two rows in R. And the point
+
+162
+00:08:47,180 --> 00:08:50,190
+is that that's telling us--
+
+163
+00:08:50,190 --> 00:08:53,180
+and we just checked that
+those two rows were--
+
+164
+00:08:53,180 --> 00:08:54,700
+two columns were independent.
+
+165
+00:08:54,700 --> 00:08:57,500
+The two rows are independent.
+
+166
+00:08:57,500 --> 00:09:04,690
+The basis, and then we
+learned that the column space
+
+167
+00:09:04,690 --> 00:09:06,190
+has dimension 2.
+
+168
+00:09:06,190 --> 00:09:08,750
+R equals 2 for this example.
+
+169
+00:09:08,750 --> 00:09:12,380
+And the row space has
+the same dimension.
+
+170
+00:09:12,380 --> 00:09:15,610
+So that column rank
+R equals the row
+
+171
+00:09:15,610 --> 00:09:21,980
+rank R. It's like if you
+had a 50 by 80 matrix,
+
+172
+00:09:21,980 --> 00:09:24,490
+OK, that's 4,000 numbers.
+
+173
+00:09:24,490 --> 00:09:27,250
+You couldn't see what
+those these dimensions are.
+
+174
+00:09:27,250 --> 00:09:29,200
+But linear algebra
+is telling you
+
+175
+00:09:29,200 --> 00:09:32,800
+that a dimension of the row
+space and the column space,
+
+176
+00:09:32,800 --> 00:09:37,220
+50 of one and 80 in
+another, are equal.
+
+177
+00:09:37,220 --> 00:09:42,630
+OK, so this is again coming
+early, and we'll see it again.
+
+178
+00:09:42,630 --> 00:09:48,100
+But it's good to start
+linear algebra from day one.
+
+179
+00:09:48,100 --> 00:09:52,630
+And then here is another
+great fact about equations
+
+180
+00:09:52,630 --> 00:09:56,960
+because matrices lead
+to these two equations
+
+181
+00:09:56,960 --> 00:09:58,530
+where x is the unknown.
+
+182
+00:09:58,530 --> 00:10:02,550
+And this equation has 0
+on the right hand side.
+
+183
+00:10:02,550 --> 00:10:06,890
+So how could we get 0
+on the right hand side?
+
+184
+00:10:06,890 --> 00:10:08,270
+We could take 1 of that.
+
+185
+00:10:08,270 --> 00:10:11,130
+And let me change that to a
+minus sign and that to a minus
+
+186
+00:10:11,130 --> 00:10:11,810
+Sign.
+
+187
+00:10:11,810 --> 00:10:15,080
+One of those minus one of
+those minus one of those
+
+188
+00:10:15,080 --> 00:10:17,540
+would be 0, 0, 0.
+
+189
+00:10:17,540 --> 00:10:23,130
+So that 1 and minus 1 and
+minus 1 would tell us an x.
+
+190
+00:10:23,130 --> 00:10:26,105
+And that's the solution.
+
+191
+00:10:26,105 --> 00:10:28,620
+In applying linear
+algebra in engineering,
+
+192
+00:10:28,620 --> 00:10:34,420
+in physics, in
+economics, in business,
+
+193
+00:10:34,420 --> 00:10:35,880
+you end up with equations.
+
+194
+00:10:35,880 --> 00:10:37,470
+Things balance.
+
+195
+00:10:37,470 --> 00:10:41,220
+And you want to know how
+many solutions there are.
+
+196
+00:10:41,220 --> 00:10:44,790
+And linear algebra was created
+to answer that question.
+
+197
+00:10:44,790 --> 00:10:47,280
+OK, so now, I'm just
+going to say a little more
+
+198
+00:10:47,280 --> 00:10:51,300
+about this starting
+method of the course.
+
+199
+00:10:51,300 --> 00:10:57,840
+Oh, I want to focus here on
+these interesting matrices,
+
+200
+00:10:57,840 --> 00:11:02,710
+where every column is a
+multiple of the first column.
+
+201
+00:11:02,710 --> 00:11:06,730
+Every row is a multiple
+of the first row.
+
+202
+00:11:06,730 --> 00:11:10,000
+Instead of having two
+independent columns and rows,
+
+203
+00:11:10,000 --> 00:11:12,130
+these matrices have only one.
+
+204
+00:11:12,130 --> 00:11:15,280
+So then C has one column.
+
+205
+00:11:15,280 --> 00:11:18,190
+And R has one row.
+
+206
+00:11:18,190 --> 00:11:20,080
+And the rank is 1.
+
+207
+00:11:20,080 --> 00:11:25,390
+These are the building blocks
+of linear algebra, these rank 1
+
+208
+00:11:25,390 --> 00:11:29,130
+matrices, column times row.
+
+209
+00:11:29,130 --> 00:11:32,740
+The previous matrix would
+have one of those blocks
+
+210
+00:11:32,740 --> 00:11:34,410
+and a second block.
+
+211
+00:11:34,410 --> 00:11:39,200
+A big matrix from data science
+would have hundreds of blocks.
+
+212
+00:11:39,200 --> 00:11:42,880
+But the great theorem
+in linear algebra
+
+213
+00:11:42,880 --> 00:11:47,290
+is to break that big matrix
+into these simple pieces.
+
+214
+00:11:47,290 --> 00:11:51,010
+So that's the goal for
+the end of the course.
+
+215
+00:11:51,010 --> 00:11:54,520
+OK, and finally, a last
+thought about these.
+
+216
+00:11:54,520 --> 00:11:58,480
+So this is C times R.
+I'm urging teachers
+
+217
+00:11:58,480 --> 00:12:02,950
+to present that
+part at the early.
+
+218
+00:12:02,950 --> 00:12:06,730
+So what are the good things,
+I've marked with a plus.
+
+219
+00:12:06,730 --> 00:12:12,190
+First of all, the columns,
+we're looking at them in C.
+
+220
+00:12:12,190 --> 00:12:15,702
+And we see them from A. We
+take them directly from A.
+
+221
+00:12:15,702 --> 00:12:20,190
+R turns out to be
+a famous matrix.
+
+222
+00:12:20,190 --> 00:12:23,610
+Row reduced echelon
+form it's called.
+
+223
+00:12:23,610 --> 00:12:27,930
+So to see that pop
+up here is terrific.
+
+224
+00:12:27,930 --> 00:12:30,450
+And then this
+wonderful fact that row
+
+225
+00:12:30,450 --> 00:12:36,270
+rank equal column rank is
+clear from this C times R.
+
+226
+00:12:36,270 --> 00:12:38,535
+So those are all
+terrifically good things.
+
+227
+00:12:41,230 --> 00:12:45,330
+The other thing I have to
+say is that C and R are not
+
+228
+00:12:45,330 --> 00:12:50,330
+great for avoiding
+round off or being
+
+229
+00:12:50,330 --> 00:12:52,970
+good in large computations.
+
+230
+00:12:52,970 --> 00:12:57,110
+This is a first
+factorization but not
+
+231
+00:12:57,110 --> 00:13:01,980
+the best one for big computing.
+
+232
+00:13:01,980 --> 00:13:02,630
+Right.
+
+233
+00:13:02,630 --> 00:13:08,000
+So ill conditioned means they
+are difficult to deal with.
+
+234
+00:13:08,000 --> 00:13:14,480
+And also, we often have a
+matrix with all the columns
+
+235
+00:13:14,480 --> 00:13:15,710
+are independent.
+
+236
+00:13:15,710 --> 00:13:17,780
+And it's a square matrix.
+
+237
+00:13:17,780 --> 00:13:19,230
+All the columns are independent.
+
+238
+00:13:19,230 --> 00:13:21,890
+We can solve Ax
+equals b all the time.
+
+239
+00:13:21,890 --> 00:13:24,960
+But then if all the
+columns are independent,
+
+240
+00:13:24,960 --> 00:13:27,440
+then our matrix C is
+just the same as A.
+
+241
+00:13:27,440 --> 00:13:29,090
+We didn't get anywhere.
+
+242
+00:13:29,090 --> 00:13:32,360
+And R would be the
+identity matrix, like a 1,
+
+243
+00:13:32,360 --> 00:13:39,940
+because A equals C. So
+this is the starting point,
+
+244
+00:13:39,940 --> 00:13:43,320
+picking out the independent
+columns, but not the end,
+
+245
+00:13:43,320 --> 00:13:44,380
+of course.
+
+246
+00:13:44,380 --> 00:13:52,140
+And I'll stop here and pick
+up on the next factorization
+
+247
+00:13:52,140 --> 00:13:52,950
+right away.
+
+248
+00:13:52,950 --> 00:13:54,500
+Thanks.
