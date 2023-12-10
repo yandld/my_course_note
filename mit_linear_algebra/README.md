@@ -8,3 +8,4 @@
 
 另外一个还挺好的笔记：<https://zhuanlan.zhihu.com/August>
 
+一个非常不错的总结: https://github.com/kenjihiranabe/The-Art-of-Linear-Algebra
